@@ -1,0 +1,682 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .body {
+    display: flex;
+    font-family: 'Inter';
+    height: 100vh;
+    width: 100vw;
+} */
+
+.d-none {
+    display: none !important;
+}
+
+:root {
+    --mainBgColor: #F6F7F8;
+    --defaultDark: #2A3647;
+    --secondaryColor: #29ABE2;
+    --activeDark: #091931;
+    --lowPriority: #7AE229;
+    --medPriority: #FFA800;
+    --highPriority: #FF3D00;
+    --avatar-color-1: #FF0000;
+    /* Rot */
+    --avatar-color-2: #FFA500;
+    /* Orange */
+    --avatar-color-3: #FFFF00;
+    /* Gelb */
+    --avatar-color-4: #008000;
+    /* Dunkelgrün */
+    --avatar-color-5: #0000FF;
+    /* Blau */
+    --avatar-color-6: #800080;
+    /* Lila */
+    --avatar-color-7: #FFC0CB;
+    /* Rosa */
+    --avatar-color-8: #00FFFF;
+    /* Türkis */
+    --avatar-color-9: #808080;
+    /* Grau */
+    --avatar-color-10: #FF69B4;
+    /* Hellrosa */
+    --avatar-color-11: #00FF00;
+    /* Grün */
+    --avatar-color-12: #7FFFD4;
+    /* Aquamarin */
+    --avatar-color-13: #9400D3;
+    /* Violett */
+    --avatar-color-14: #FFD700;
+    /* Gold */
+    --avatar-color-15: #FF1493;
+    /* Pink */
+    --avatar-color-16: #00CED1;
+    /* Türkisblau */
+    --avatar-color-17: #FF6347;
+    /* Tomatenrot */
+    --avatar-color-18: #4B0082;
+    /* Indigoblau */
+    --avatar-color-19: #808000;
+    /* Olivgrün */
+}
+
+h1 {
+    height: 73px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+}
+
+indexWrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.indexContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex-grow: 1;
+
+}
+
+.indexContent {
+    height: 100%;
+}
+
+.indexHeader {
+    z-index: 1;
+}
+
+
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 334px;
+    width: 274px;
+    transform: translate(-50%, -50%);
+    animation-name: logo-animation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 0px;
+    gap: 35px;
+    background: #FFFFFF;
+    width: 652px;
+    height: 513px;
+
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.loginContainer.show {
+    opacity: 1;
+}
+
+.logo-animation {
+    animation-name: logo-animation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.logo-animation:last-of-type {
+    animation-name: logo-animation, show-content;
+}
+
+@keyframes show-content {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes logo-animation {
+    0% {
+        width: 274px;
+        height: 334px;
+    }
+
+    100% {
+        width: 100.03px;
+        height: 121.97px;
+        transform: translate(0, 0);
+        top: 80px;
+        left: 77px;
+    }
+}
+
+
+.loginSignUpButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px;
+    gap: 10px;
+    width: 91px;
+    height: 51px;
+    background: var(--defaultDark);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.loginSignUpButton span {
+    width: 59px;
+    height: 19px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: white;
+}
+
+
+.loginLoginButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;
+    width: 145px;
+    height: 51px;
+    background: var(--defaultDark);
+    border-radius: 8px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.loginLoginButton span {
+
+    height: 25px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: white;
+}
+
+
+
+.loginGuestButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px;
+    gap: 10px;
+    width: 161px;
+    height: 51px;
+    border: 1px solid var(--defaultDark);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.loginGuestButton span {
+    width: 129px;
+    height: 25px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: var(--defaultDark);
+    white-space: nowrap;
+}
+
+
+.signUpSignUpButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;
+    width: 145px;
+    height: 51px;
+    background: var(--defaultDark);
+    border-radius: 8px;
+}
+
+.signUpButton span {
+    width: 78px;
+    height: 25px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: white;
+}
+
+
+
+.boardAddTaskButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+    width: 137px;
+    height: 51px;
+    background: var(--defaultDark);
+    border: 1px solid var(--defaultDark);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.boardAddTaskButton span {
+    width: 92px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: white;
+    white-space: nowrap;
+}
+
+
+.addTaskCreateTaskButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+
+    width: 177px;
+    height: 61px;
+
+    background: #2A3647;
+    border-radius: 10px;
+}
+
+.addTaskCreateTaskButton span {
+    width: 123px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: white;
+}
+
+
+.addTaskClearButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+    width: 136px;
+    height: 61px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.addTaskClearButton span {
+    width: 53px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    color: var(--defaultDark);
+}
+
+.contactsNewContactButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 193px;
+    height: 53px;
+    left: 1195px;
+    top: 700px;
+    background: var(--defaultDark);
+    border: 1px solid var(--defaultDark);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contactsNewContactButton span {
+    width: 130px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.resetButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;
+    width: 264px;
+    height: 51px;
+    cursor: pointer;
+    background: #2A3647;
+    border-radius: 8px;
+}
+
+.resetButton span {
+    width: 95px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.forgotButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;
+    width: 264px;
+    height: 51px;
+    background: #2A3647;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.forgotButton span {
+    width: 189px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+.addContactOverlayCreateContactButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+    width: 208px;
+    height: 61px;
+    background: var(--defaultDark);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.addContactOverlayCreateContactButton span {
+    width: 154px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+.addContactOverlayCancelButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+    width: 136px;
+    height: 61px;
+    border: 1px solid var(--defaultDark);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.addContactOverlayCancelButton span {
+    width: 69px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    color: var(--defaultDark);
+}
+
+
+.editContactOverlaySaveButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+
+    width: 143px;
+    height: 61px;
+
+    background: var(--defaultDark);
+    border-radius: 10px;
+}
+
+.editContactOverlaySaveButton span {
+    width: 123px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.activeTaskDelete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 6px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50px;
+    top: 0px;
+    background: #FFFFFF;
+    border: 1px solid #2A3647;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.activeTaskMove {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 6px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 49px;
+    top: 0px;
+    background: #FFFFFF;
+    border: 1px solid #2A3647;
+}
+
+.activeTaskMove img{
+    width: 31px;
+    height: 31px;
+}
+
+.activeTaskEdit {display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 6px;
+    
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 99px;
+    top: 0px;
+    
+    /* Version 2/ main color  */
+    
+    background: #2A3647;
+    border-radius: 0px 10px 10px 0px;}
+
+
+
+.activeTaskCloseButton {
+    position: absolute;
+    left: 562.31px;
+    top: 35px;
+    cursor: pointer;
+}
+
+.boardAddTaskButton:hover,
+.contactsNewContactButton:hover,
+.loginLoginButton:hover,
+.loginSignUpButton:hover,
+.resetButton:hover,
+.forgotButton:hover,
+.editContactOverlaySaveButton:hover,
+.addContactOverlayCreateContactButton:hover,
+.activeTaskEdit:hover {
+    background-color: var(--secondaryColor);
+    border: 1px solid var(--secondaryColor);
+}
+
+.loginGuestButton:hover,
+.addContactOverlayCancelButton:hover,
+.activeTaskMove:hover,
+.activeTaskDelete:hover {
+    border: 2px solid #29ABE2;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.loginGuestButton:hover span,
+.addContactOverlayCancelButton:hover span {
+    color: var(--secondaryColor)
+}
+
+.loginErrorMessage,
+.signUpErrorMessage,
+.forgotErrorMessage,
+.newPasswordErrorMessage,
+.addContactErrorMessage,
+.resetErrorMessage {
+    white-space: nowrap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    color: #FF001F;
+}
+
+.loginBlackLayer,
+.forgotBlackLayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgb(0 0 0 / 50%);
+    z-index: 1;
+}
+
+.loginSentConfirmation{
+    position: absolute;
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px 20px;
+gap: 13px;
+width: 424px;
+height: 74px;
+background: #2A3647;
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+border-radius: 20px;
+bottom: -10%;
+transition: bottom 800ms ease-out;
+}
+
+.loginSentConfirmation span{
+    width: 330px;
+    height: 28px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 120%;
+    color: #FFFFFF;
+    
+}
+
+
+.forgotSentConfirmation{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+width: 326px;
+height: 74px;
+background: #2A3647;
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+border-radius: 20px;
+position: absolute;
+bottom:-10%;
+transition: bottom 800ms ease-out;
+}
+
+.forgotSentConfirmation span{
+  
+height: 28px;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 23px;
+line-height: 120%;
+color: #FFFFFF;
+}
+
+.curser-pointer {
+    cursor: pointer;
+}
