@@ -1,16 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    background-color: #F5F5F5;;
+    background-color: #F5F5F5;
+    display: flex;
+    height: 100vh
 }
 
 .container-all {
-    margin-left: 123px;
-    margin-top:82px
+    width: 100%;
 }
 
 .headline-summary {
     display: flex;
     align-items: center;
+    justify-content:center;
+    margin-top: 50px;
 }
 
 .summary {
@@ -223,6 +232,7 @@ img.pen-icon {
 .body-summary-container {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .welcome-desk {
