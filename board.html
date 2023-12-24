@@ -7,12 +7,19 @@
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/desktop_template.css">
+  <link rel="stylesheet" href="./css/add_task.css">
+  <link rel="stylesheet" href="./css/fadeIn_fadeOut.css">
   <script src="./js/board.js"></script>
   <script src="./js/main.js"></script>
-   <script src="./js/includeHTML.js"></script>
+  <script src="./js/includeHTML.js"></script>
+  <script src="./js/add_task.js"></script>
+  <script src="./js/fadeIn_fadeOut.js"></script>
+
   <title>Board</title>
 </head>
 <body onload="includeHTML()">
+  <div class="postion-edit-contact-card add-task-window d-none" id="addContactCard" w3-include-html="./asset/templates/activeTaskEditOverlay.html" ></div>
+  <div class="add-task-window d-none " id="add-task-window" w3-include-html="./asset/templates/addTaskOverlayTemplate.html"></div>
    <div class="test" w3-include-html="./asset/templates/desktop_template.html"></div>
    <div class="board">
      <div w3-include-html="./asset/templates/header.html"></div>
