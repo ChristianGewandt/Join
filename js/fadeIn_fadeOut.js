@@ -31,18 +31,19 @@ function closeEditContactForm(event) {
    document.getElementById("add-task-window").classList.remove("fade-out-right");
    document.getElementById("add-task-window").classList.remove("d-none"); 
    document.getElementById("add-task-window").classList.add("fade-in-left");
-  openBackgroundOverlay();
+   document.getElementById("background-overlay-aktive-task").classList.remove("fade-out-right");
+   document.getElementById("background-overlay-aktive-task").classList.remove("d-none");
+   document.getElementById("background-overlay-aktive-task").classList.add("fade-in-left");
 }
 
 function closeAddTaskWindow() {
   document.getElementById("add-task-window").classList.add("fade-out-right");
   document.getElementById("add-task-window").classList.remove("fade-in-left");
-  document.getElementById("backgroundOverlay").classList.remove("fade-in-left");
-  document.getElementById("backgroundOverlay").classList.add("fade-out-right");
-
+  document.getElementById("background-overlay-aktive-task").classList.remove("fade-in-left");
+  document.getElementById("background-overlay-aktive-task").classList.add("fade-out-right");
   setTimeout(function () {
     document.getElementById("add-task-window").classList.add("d-none");
-    document.getElementById("backgroundOverlay").classList.add("d-none");
+    document.getElementById("background-overlay-aktive-task").classList.add("d-none");
   }, 1500);
 }
 
@@ -86,11 +87,11 @@ function openContactCardWithOverlay(id) {
   openBackgroundOverlay();
 }
 
-function openBackgroundOverlay() {
-  document.getElementById("backgroundOverlay").classList.remove("d-none");
-  document.getElementById("backgroundOverlay").classList.add("fade-in-left");
-  document.getElementById("backgroundOverlay").classList.remove("fade-out-right");
-}
+// function openBackgroundOverlay() {
+//   document.getElementById("backgroundOverlay").classList.remove("d-none");
+//   document.getElementById("backgroundOverlay").classList.add("fade-in-left");
+//   document.getElementById("backgroundOverlay").classList.remove("fade-out-right");
+// }
 
 
 function openHelp() {

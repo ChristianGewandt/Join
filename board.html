@@ -18,6 +18,9 @@
   <title>Board</title>
 </head>
 <body onload="includeHTML()">
+  <div class="container-opened-task d-none" id="backgroundOverlay" onclick="closeEditCardOverlay()"></div>
+  <div class="container-opened-task d-none" id="background-overlay-aktive-task" onclick="closeAddTaskWindow()"></div>
+  <!-- <div class="add-task-window d-none" id="add-task-window" w3-include-html="./assets/templates/addTaskOverlayTemplate.html"></div> -->
   <div class="postion-edit-contact-card add-task-window d-none" id="addContactCard" w3-include-html="./asset/templates/activeTaskEditOverlay.html" ></div>
   <div class="add-task-window d-none " id="add-task-window" w3-include-html="./asset/templates/addTaskOverlayTemplate.html"></div>
    <div class="test" w3-include-html="./asset/templates/desktop_template.html"></div>

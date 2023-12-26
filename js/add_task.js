@@ -18,7 +18,7 @@ function openNewTaskCategroy(n) {
   document.getElementById(`select-container${n}`).innerHTML = `
     <div onclick="closeNewTaskCategroy(${n})" class="option">
       <div>Select task category</div>
-      <img class="arrow-icon" src="assets/img/arrow_top_icon.svg" alt="">
+      <img class="arrow-icon" src="./asset/img/arrow_top_icon.svg" alt="">
     </div>
     <div id="content-categroy-container${n}" class="">
       <div onclick="openNewCategroy('new-category-container${n}', 'color-container${n}', 'select-container${n}', ${n})" class="option">New Category</div>
@@ -36,13 +36,13 @@ function prioColor(color, n) {
   if (color == 'prio-red') {
     if (divRed.classList.contains('prio-red')) {
       document.getElementById(`prio-red${n}`).classList.remove('prio-red');
-      document.getElementById(`prio-urgent-icon${n}`).src = './assets/img/prio-urgent-icon.svg';
+      document.getElementById(`prio-urgent-icon${n}`).src = './asset/img/prio-urgent-icon.svg';
       deleteJasonPrio()
     } else {
       document.getElementById(`prio-red${n}`).classList.add('prio-red');
-      document.getElementById(`prio-urgent-icon${n}`).src = 'assets/img/prio-urgent-white-icon.svg';
-      document.getElementById(`prio-medium-icon${n}`).src = 'assets/img/prio-medium-icon.svg';
-      document.getElementById(`prio-low-icon${n}`).src = 'assets/img/prio-low-icon.svg';
+      document.getElementById(`prio-urgent-icon${n}`).src = './asset/img/prio-urgent-white-icon.svg';
+      document.getElementById(`prio-medium-icon${n}`).src = './asset/img/prio-medium-icon.svg';
+      document.getElementById(`prio-low-icon${n}`).src = './asset/img/prio-low-icon.svg';
       document.getElementById(`prio-yellow${n}`).classList.remove('prio-yellow');
       document.getElementById(`prio-green${n}`).classList.remove('prio-green');
       document.getElementById(`prio-medium-icon${n}`).classList.remove("d-none");
@@ -54,13 +54,13 @@ function prioColor(color, n) {
   } else if (color == 'prio-yellow') {
     if (divYellow.classList.contains("prio-yellow")) {
       document.getElementById(`prio-yellow${n}`).classList.remove('prio-yellow');
-      document.getElementById(`prio-medium-icon${n}`).src = './assets/img/prio-medium-icon.svg';
+      document.getElementById(`prio-medium-icon${n}`).src = './asset/img/prio-medium-icon.svg';
       deleteJasonPrio();
     } else {
       document.getElementById(`prio-yellow${n}`).classList.add('prio-yellow');
-      document.getElementById(`prio-medium-icon${n}`).src = './assets/img/prio-medium-white-icon.svg';
-      document.getElementById(`prio-urgent-icon${n}`).src = './assets/img/prio-urgent-icon.svg';
-      document.getElementById(`prio-low-icon${n}`).src = './assets/img/prio-low-icon.svg';
+      document.getElementById(`prio-medium-icon${n}`).src = './asset/img/prio-medium-white-icon.svg';
+      document.getElementById(`prio-urgent-icon${n}`).src = './asset/img/prio-urgent-icon.svg';
+      document.getElementById(`prio-low-icon${n}`).src = './asset/img/prio-low-icon.svg';
       document.getElementById(`prio-red${n}`).classList.remove('prio-red');
       document.getElementById(`prio-green${n}`).classList.remove('prio-green');
       document.getElementById(`prio-urgent-icon${n}`).classList.remove("d-none");
@@ -72,13 +72,13 @@ function prioColor(color, n) {
   } else if (color == 'prio-green') {
     if (divGreen.classList.contains("prio-green")) {
       document.getElementById(`prio-green${n}`).classList.remove('prio-green');
-      document.getElementById(`prio-low-icon${n}`).src = './assets/img/prio-low-icon.svg';
+      document.getElementById(`prio-low-icon${n}`).src = './asset/img/prio-low-icon.svg';
       deleteJasonPrio();
     } else {
       document.getElementById(`prio-green${n}`).classList.add('prio-green');
-      document.getElementById(`prio-low-icon${n}`).src = './assets/img/prio-low-white-icon.svg';
-      document.getElementById(`prio-urgent-icon${n}`).src = './assets/img/prio-urgent-icon.svg';
-      document.getElementById(`prio-medium-icon${n}`).src = './assets/img/prio-medium-icon.svg';
+      document.getElementById(`prio-low-icon${n}`).src = './asset/img/prio-low-white-icon.svg';
+      document.getElementById(`prio-urgent-icon${n}`).src = './asset/img/prio-urgent-icon.svg';
+      document.getElementById(`prio-medium-icon${n}`).src = './asset/img/prio-medium-icon.svg';
       document.getElementById(`prio-red${n}`).classList.remove('prio-red');
       document.getElementById(`prio-yellow${n}`).classList.remove('prio-yellow');
       document.getElementById(`prio-urgent-icon${n}`).classList.remove('d-none');
@@ -206,15 +206,15 @@ function deleteAddTaskFields(n) {
   document.getElementById(`prio-red${n}`).classList.remove('prio-red');
   document.getElementById(`prio-urgent-icon${n}`).classList.remove("d-none");
   document.getElementById(`prio-urgent-white-icon${n}`).classList.add("d-none");
-  document.getElementById(`prio-urgent-icon${n}`).src = './assets/img/prio-urgent-icon.svg';
+  document.getElementById(`prio-urgent-icon${n}`).src = './asset/img/prio-urgent-icon.svg';
   document.getElementById(`prio-yellow${n}`).classList.remove('prio-yellow');
   document.getElementById(`prio-medium-icon${n}`).classList.remove("d-none");
   document.getElementById(`prio-medium-white-icon${n}`).classList.add("d-none");
-  document.getElementById(`prio-medium-icon${n}`).src = './assets/img/prio-medium-icon.svg';
+  document.getElementById(`prio-medium-icon${n}`).src = './asset/img/prio-medium-icon.svg';
   document.getElementById(`prio-green${n}`).classList.remove('prio-green');
   document.getElementById(`prio-low-icon${n}`).classList.remove("d-none");
   document.getElementById(`prio-low-white-icon${n}`).classList.add("d-none");
-  document.getElementById(`prio-low-icon${n}`).src = './assets/img/prio-low-icon.svg';
+  document.getElementById(`prio-low-icon${n}`).src = './asset/img/prio-low-icon.svg';
   addTaskNewSubtasks.splice(length)
 }
 
@@ -277,7 +277,7 @@ async function addTaskCategory(n) {
         <div class="color" style="background-color: ${category["categoryColor"]}"></div>
       </div>
       <div class="color-and-delete-icon-container">
-        <img onclick="deleteCategory(${i}, ${n})" class="delete-icon" src = "./assets/img/delete.png" alt = "" >
+        <img onclick="deleteCategory(${i}, ${n})" class="delete-icon" src = "./asset/img/delete.svg" alt = "" >
       </div> 
     </div>`;
   }
@@ -315,7 +315,7 @@ function renderSelectOpenTaskCategory(n) {
     `select-container${n}`,
   ).innerHTML = `<div onclick="openNewTaskCategroy(${n}); " class="option selectTask${n}"> <!-- checkMandatoryFieldCategory(${n}); -->
     <div id="select-open-task-category${n}">Select task category</div>
-    <img  class="arrow-icon" src="./assets/img/arrow_icon.svg" alt="">
+    <img  class="arrow-icon" src="./asset/img/arrow_icon.svg" alt="">
   </div>
   <div id="content-categroy-container${n}" class="d-none">
     <div onclick="openNewCategroy('new-category-container${n}', 'color-container${n}', 'select-container${n}', ${n})" class="option ">New Category</div>
@@ -325,7 +325,7 @@ function renderSelectCloseTaskCategory(n, content) {
   content.innerHTML = '';
   content.innerHTML = `<div class="option selectTask" onclick="closeNewTaskCategroy(${n}); checkMandatoryFieldCategory(${n})">
     <div id="select-close-task-category${n}">Select task category</div>
-    <img  class="arrow-icon" src="./assets/img/arrow_top_icon.svg" alt="">
+    <img  class="arrow-icon" src="./asset/img/arrow_top_icon.svg" alt="">
   </div>
   <div id="content-categroy-container${n}">
     <div onclick="openNewCategroy('new-category-container${n}', 'color-container${n}', 'select-container${n}', ${n})" class="option choose">New Category</div>
@@ -341,7 +341,7 @@ function selectCategory(i, n) {
                   <div id="color-button-container${n}"><div class="color-category-button" style="background-color :${category["categoryColor"]};">  
                   </div></div>
                 </div>
-                <img class="arrow-icon" src="./assets/img/arrow_icon.svg" alt="">
+                <img class="arrow-icon" src="./asset/img/arrow_icon.svg" alt="">
               </div>`;
   pushPointsInCategoryArray(category['categorytext'], category['categoryColor'] ) 
 }
@@ -375,11 +375,11 @@ function openSelectContactsToAssign(n) {
   document.getElementById(`select-contacts-container${n}`).innerHTML = `
   <div onclick="closeSelectContactsToAssign(${n}); checkMandatoryFieldAssignedTo(${n})" class="option display-flex">
     <div>Select contacts to assign</div>
-    <img class="arrow-icon" src="assets/img/arrow_top_icon.svg" alt="">
+    <img class="arrow-icon" src="./asset/img/arrow_top_icon.svg" alt="">
   </div>
     <div id="invite-new-contact-container${n}" onclick="inviteNewContact(${n})"" class="option">
       <div>Invite new contact</div>                       
-    <img class="contact-icon" src="assets/img/contact_icon.svg" alt="">
+    <img class="contact-icon" src="./asset/img/contact_icon.svg" alt="">
   </div>`;
   loadContactsInAddTaskContacts()
   loadNewContactsInAddTaskContacts()
