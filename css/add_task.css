@@ -11,6 +11,11 @@ body {
     font-family: 'Inter';
     font-style: normal;
     overflow: hidden;
+    height: 100vh;
+}
+
+.head-and-body-container {
+    width: 100%;
 }
 
 .title-container {
@@ -238,8 +243,8 @@ img.arrow-icon {
 .content-add-task-container {
     display: flex;
     flex-direction: column;
-    /* width: 100%;
-    align-items: center; */
+    /* width: 100%;*/
+    align-items: center; 
 }
 
 .content-add-task-body-container {
