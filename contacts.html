@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/contacts.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/desktop_template.css">
+    <script src="./js/contacts.js"></script>
+    <script src="./js/includeHTML.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/fadeIn_fadeOut.js"></script>
+    <title>Contacts</title>
+</head>
+<body onload="includeHTML()">
+    <div class="test" w3-include-html="./asset/templates/desktop_template.html"></div>
+  <contacts>
+    <div w3-include-html="./asset/templates/header.html"></div>
+    <div class="container-contacts">
+        <div class="contactsLeft" id="contactsList"></div>
+    <div class="contactsRight">
+        <div class="contactsRightHeader">
+            <h1>Contacts</h1><img src="./asset/img/contactsSeperator.svg" alt=""><span>Better with a Team</span>
+        </div>
+        <div class="contactsCardContainer">
+            <div class="contactsCard">
+                
+            </div>
+        </div>
+        <button class="contactsNewContactButton" onclick="openContactCardWithOverlay('addContactCard')"><span>New Contact</span><img
+                src="./asset/img/addContactIcon.svg" alt=""></button>
+    </div>
+    </div>
+    
+</contacts>  
+</body>
+</html>
