@@ -87,11 +87,11 @@ function openContactCardWithOverlay(id) {
   openBackgroundOverlay();
 }
 
-// function openBackgroundOverlay() {
-//   document.getElementById("backgroundOverlay").classList.remove("d-none");
-//   document.getElementById("backgroundOverlay").classList.add("fade-in-left");
-//   document.getElementById("backgroundOverlay").classList.remove("fade-out-right");
-// }
+function openBackgroundOverlay() {
+  document.getElementById("backgroundOverlay").classList.remove("d-none");
+  document.getElementById("backgroundOverlay").classList.add("fade-in-left");
+  document.getElementById("backgroundOverlay").classList.remove("fade-out-right");
+}
 
 
 function openHelp() {

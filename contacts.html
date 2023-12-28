@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fonts.css">
     <link rel="stylesheet" href="./css/contacts.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/desktop_template.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/board.css">
+    <link rel="stylesheet" href="./css/fadeIn_fadeOut.css">
     <script src="./js/contacts.js"></script>
     <script src="./js/includeHTML.js"></script>
     <script src="./js/main.js"></script>
@@ -14,7 +18,9 @@
     <title>Contacts</title>
 </head>
 <body onload="includeHTML()">
-    <div class="test" w3-include-html="./asset/templates/desktop_template.html"></div>
+    <div class="container-opened-task d-none" id="backgroundOverlay" onclick="closeEditCardOverlay()"></div>
+    <div w3-include-html="./asset/templates/desktop_template.html"></div>
+    <div class="postion-edit-contact-card add-task-window d-none" id="addContactCard" w3-include-html="./asset/templates/addContactCard.html" ></div>
   <contacts>
     <div w3-include-html="./asset/templates/header.html"></div>
     <div class="container-contacts">
