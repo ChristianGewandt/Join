@@ -59,9 +59,9 @@ function closeContactCard(id) {
   document.getElementById("backgroundOverlay").classList.add("fade-out-right");
   
   setTimeout(function () {
-  document.getElementById(id).classList.add("d-none");
-  document.getElementById("backgroundOverlay").classList.add("d-none");
-  }, 1500);
+    document.getElementById("backgroundOverlay").classList.add("d-none");
+    document.getElementById(id).classList.add("d-none");
+  }, 1000);
 }
 
 function closeEditCardOverlay() {
@@ -71,8 +71,7 @@ function closeEditCardOverlay() {
   document.getElementById("backgroundOverlay").classList.add("fade-out-right");
   document.getElementById("addContactCard").classList.remove("fade-in-left");
   document.getElementById("addContactCard").classList.add("fade-out-right");
-  document.getElementById("add-task-window").classList.remove("fade-in-left");
-  document.getElementById("add-task-window").classList.add("fade-out-right");
+  
 
   setTimeout(function () {
     document.getElementById("editContactOverlay").classList.add("d-none");

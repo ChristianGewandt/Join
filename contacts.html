@@ -18,10 +18,12 @@
     <title>Contacts</title>
 </head>
 <body onload="includeHTML()">
-    <div class="container-opened-task d-none" id="backgroundOverlay" onclick="closeEditCardOverlay()"></div>
+    <div class="container-opened-task d-none" id="backgroundOverlay" onclick="closeContactCard('addContactCard')"></div>
+    <!-- <div class="container-opened-task d-none" id="backgroundOverlay" onclick="closeEditCardOverlay()"></div> -->
+    <div class="postion-edit-contact-card d-none" id="editContactOverlay" w3-include-html="./asset/templates/editContactCard.html"></div>
     <div w3-include-html="./asset/templates/desktop_template.html"></div>
     <div class="postion-edit-contact-card add-task-window d-none" id="addContactCard" w3-include-html="./asset/templates/addContactCard.html" ></div>
-  <contacts>
+    <contacts>
     <div w3-include-html="./asset/templates/header.html"></div>
     <div class="container-contacts">
         <div class="contactsLeft" id="contactsList"></div>
