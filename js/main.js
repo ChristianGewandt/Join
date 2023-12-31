@@ -96,8 +96,8 @@ let standartIcon = "./assets/img/loginPassword.svg";
 
 
 async function init() {
-  includeHTML();
   await getServer();
+  includeHTML();
   render();
   // loadUsers();
 }

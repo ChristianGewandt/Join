@@ -11,17 +11,20 @@
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/board.css">
     <link rel="stylesheet" href="./css/fadeIn_fadeOut.css">
+    <script src="./js/main.js"></script>
+    <script src="/js/summary.js"></script>
+    <script src="/js/add_task.js"></script>
+    <script src="/js/board.js"></script>
     <script src="./js/contacts.js"></script>
     <script src="./js/includeHTML.js"></script>
-    <script src="./js/main.js"></script>
     <script src="./js/fadeIn_fadeOut.js"></script>
     <script src="./js/storage.js"></script>
     <title>Contacts</title>
 </head>
-<body onload="includeHTML()">
+<body onload="initContacts()">
     <div class="container-opened-task d-none" id="backgroundOverlay" onclick="closeContactCard('addContactCard')"></div>
-    <!-- <div class="container-opened-task d-none" id="backgroundOverlay" onclick="closeEditCardOverlay()"></div> -->
-    <div class="postion-edit-contact-card d-none" id="editContactOverlay" w3-include-html="./asset/templates/editContactCard.html"></div>
+    <div class="container-opened-task d-none" id="editContactOverlay" onclick="closeEditContactCard()"></div>
+    <div class="postion-edit-contact-card d-none" id="editContactCard"  w3-include-html="./asset/templates/editContactCard.html"></div>
     <div w3-include-html="./asset/templates/desktop_template.html"></div>
     <div class="postion-edit-contact-card add-task-window d-none" id="addContactCard" w3-include-html="./asset/templates/addContactCard.html" ></div>
     <contacts>

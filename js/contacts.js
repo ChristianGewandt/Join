@@ -1,4 +1,15 @@
 let contactToEdit
+
+async function initContacts() {
+  await getServer();
+  includeHTML();
+  renderContacts();
+  // loadUsers();
+}
+
+
+
+
 function renderContacts() {
   getFirstLetter()
   showList()
@@ -208,7 +219,7 @@ function setInnerContactCardTemplate(j) {
 </div>
 <div class="contactCardInfoHeader">
   <span>Contact Information</span>
-  <div onclick="openEditContactOverlay(${j}, 'editContactOverlay')" class="contactCardEdit">
+  <div onclick="openEditContactOverlay(${j}, 'editContactCard')" class="contactCardEdit">
       <img src="./assets/img/editIcon.svg" alt="">
       <span>Edit Contact</span>
   </div>

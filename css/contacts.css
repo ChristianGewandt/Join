@@ -237,9 +237,10 @@ contacts {
     gap: 21px;
     position: absolute;
     height: 364px;
+    width: 100%;
     left: 750px;
     top: 326px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .contactsCard {
@@ -777,4 +778,11 @@ border-radius: 70px
     align-items: center;
     text-align: center;
     color: #FFFFFF; 
+}
+
+.postion-edit-contact-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
 }
