@@ -48,6 +48,19 @@ function closeEditContactForm(event) {
   event.stopPropagation(); // Verhindert, dass das Klickereignis auf das übergeordnete Element übergeht.
 }
 
+
+function closEactiveTask() {
+ 
+  document.getElementById("activeTaskBackgroundOverlay").classList.add("fade-out-right");
+  document.getElementById("activeTaskBackgroundOverlay").classList.remove("fade-in-left");
+  document.getElementById("background-overlay-aktive-task").classList.remove("fade-in-left");
+  document.getElementById("background-overlay-aktive-task").classList.add("fade-out-right");
+  setTimeout(function () {
+    document.getElementById("activeTaskBackgroundOverlay").classList.add("d-none");
+    document.getElementById("background-overlay-aktive-task").classList.add("d-none");
+  }, 1500);
+}
+
  function openAddTaskWindow() {
    document.getElementById("add-task-window").classList.remove("fade-out-right");
    document.getElementById("add-task-window").classList.remove("d-none"); 

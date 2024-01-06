@@ -1,4 +1,9 @@
-
+async function initSummery() {
+  await getServer();
+  includeHTML();
+  renderSummary();
+  // loadUsers();
+}
 
 function onMouseOverImg(id, src) {
   document.getElementById(id).setAttribute("src", src);

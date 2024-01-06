@@ -14,6 +14,7 @@ let selectedColor;
 
 
 
+
 function openNewTaskCategroy(n) {
   document.getElementById(`select-container${n}`).innerHTML = `
     <div onclick="closeNewTaskCategroy(${n})" class="option">
