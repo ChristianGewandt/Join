@@ -12,7 +12,6 @@ body {
 
 
 .board {
-    position: relative;
     width: 100%;
     background: #F6F7F8;
     /* padding: 0px 65px 0 65px */

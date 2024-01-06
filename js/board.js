@@ -205,11 +205,11 @@ function addActiveTaskOverlayHTML(i) {
        
     </div>
     <div class="activeTaskButtons">
-        <div onmouseover="hover(activeTaskDelete, 'assets/img/deleteHover.svg')" onmouseout="hover(activeTaskDelete, 'assets/img/delete.svg')" class="activeTaskDelete" onclick="deleteBoardTasks(${i})">
-            <img id="activeTaskDelete" src="assets/img/delete.svg" alt="">
+        <div onmouseover="hover(activeTaskDelete, './asset/img/deleteHover.svg')" onmouseout="hover(activeTaskDelete, './asset/img/delete.svg')" class="activeTaskDelete" onclick="deleteBoardTasks(${i})">
+            <img id="activeTaskDelete" src="./asset/img/delete.svg" alt="">
         </div>
         <div class="activeTaskEdit" onclick="loadActiveEditTaskOverlay(${i}); okayButtonHTML(${i}, 2);">
-            <img id="activeTaskEdit" src="assets/img/editTaskPen.svg" alt="">
+            <img id="activeTaskEdit" src="./asset/img/editTaskPen.svg" alt="">
         </div>
     </div>
     <img onclick="closeActiveTaskOverlay()" class="activeTaskCloseButton" src="./asset/img/black-x.svg" alt="">
