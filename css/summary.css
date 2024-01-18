@@ -22,6 +22,10 @@ body {
     margin-top: 50px;
 }
 
+#summary-menue {
+    height: 100vh;
+}
+
 .summary {
     width: 315px;
     height: 73px;

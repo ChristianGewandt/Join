@@ -1,3 +1,7 @@
+.menue-container {
+    height: 100%;
+}
+
 .desktopTemplate {
     display: flex;
     flex-direction: column;

@@ -12,6 +12,11 @@ let buttonBackgroundColor = ['#800080', '#ff0000', '#008000', '#ffba00', '#ffc0c
 let selectedCategory;
 let selectedColor;
 
+async function initAddTask() {
+  includeHTML();
+  await getServer();
+  setActiveElement("addTask", 2);
+}
 
 
 

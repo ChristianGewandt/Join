@@ -1,118 +1,129 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/summary.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/desktop_template.css">
-  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./fonts.css">
   <script src="./js/main.js"></script>
-  <script src="./js/summary.js"></script>
   <script src="./js/includeHTML.js"></script>
+  <script src="./js/desktop_template.js"></script>
+  <script src="./js/summary.js"></script>
   <title>summary</title>
 </head>
 <body onload="initSummery()">
-  <div class="test" w3-include-html="./asset/templates/desktop_template.html"></div>
+  <div id="summary-menue">
+    <div class="menue-container" w3-include-html="./asset/templates/desktop_template.html"></div>
+  </div>
   <div class="container-all">
     <div w3-include-html="./asset/templates/header.html"></div>
-  <div class="headline-summary">
-    <div class="summary">Summary</div>
-    <img src="./assets/img/contactsSeperator.svg" alt="" />
-    <div class="everything-in-a-nutshell">Everything in a nutshell!</div>
-  </div>
-  <div class="body-summary-container">
-    <div class="container-button">
-      <div class="container-button-head">
-        <div
+    <div class="headline-summary">
+      <div class="summary">Summary</div>
+      <img src="./asset/img/contactsSeperator.svg" alt="" />
+      <div class="everything-in-a-nutshell">Everything in a nutshell!</div>
+    </div>
+    <div class="body-summary-container">
+      <div class="container-button">
+        <div class="container-button-head">
+          <div
           class="button-v1 button-number-hover-effect hover-effect"
           onclick="showContent('boardContent'); setActiveElement(this)"
-        >
+          >
           <span id="tasks-in-board" class="button-nummber-v1-v3">5</span>
           <span class="button-text-v1-v3">Tasks in Board</span>
         </div>
-        <div
+        <!-- <div
           class="button-v1 button-number-hover-effect hover-effect"
           onclick="showContent('boardContent'); setActiveElement(this)"
-        >
-          <div id="tasks-in-progress" class="button-nummber-v1-v3">5</div>
-          <div class="button-text-v1-v3">Tasks in Progress</div>
-        </div>
+          >
+          <span id="tasks-in-board" class="button-nummber-v1-v3">5</span>
+          <span class="button-text-v1-v3">Tasks in Board</span>
+        </div> -->
         <div
-          class="button-v1 button-number-hover-effect hover-effect"
-          onclick="showContent('boardContent'); setActiveElement(this)"
-        >
-          <div id="tasks-in-feedback" class="button-nummber-v1-v3">5</div>
-          <div class="button-text-v1-v3">Tasks in Feedback</div>
-        </div>
-      </div>
-
-      <div
-        class="button-v2 button-number-hover-effect hover-effect"
+        class="button-v1 button-number-hover-effect hover-effect"
         onclick="showContent('boardContent'); setActiveElement(this)"
+        >
+        <div id="tasks-in-progress" class="button-nummber-v1-v3">5</div>
+        <div class="button-text-v1-v3">Tasks in Progress</div>
+      </div>
+      <div
+      class="button-v1 button-number-hover-effect hover-effect"
+      onclick="showContent('boardContent'); setActiveElement(this)"
       >
-        <div class="container-urgent-left">
-          <div>
-            <img
-              class="orange-button"
-              src="./asset/img/oranger_button.svg"
-              alt=""
-            />
-          </div>
-          <div>
-            <div id="tasks-in-urgent" class="button-nummber-v2">1</div>
-            <div class="button-text-v2">Urgent</div>
-          </div>
-        </div>
-        <div class="v-line-grey"></div>
-        <div>
-          <div id="urgent-date" class="button-text-v2">October 16, 2022</div>
-          <div class="">Upcoming Deadline</div>
-        </div>
-      </div>
-      <div class="container-button-bottom">
-        <div
-          class="button-v3 button-number-hover-effect hover-effect"
-          onmouseover="onMouseOverImg('pen-icon', './asset/img/pen_white_icon.svg')"
-          onmouseout="onMouseOutImg('pen-icon', './asset/img/pen_icon.svg')"
-          onclick="showContent('boardContent'); setActiveElement(this)"
-        >
-          <img
-            id="pen-icon"
-            class="pen-icon"
-            src="./asset/img/pen_icon.svg"
-            alt=""
-          />
-          <div>
-            <div id="tasks-in-to-do" class="button-nummber-v1-v3">1</div>
-            <div class="button-text-v1-v3">To-do</div>
-          </div>
-        </div>
-        <div
-          class="button-v3 button-number-hover-effect hover-effect"
-          onmouseover="onMouseOverImg('hook-icon', './asset/img/hook_white_icon.svg')"
-          onmouseout="onMouseOutImg('hook-icon', './asset/img/hook_icon.svg')"
-          onclick="showContent('boardContent'); setActiveElement(this)"
-        >
-          <img
-            id="hook-icon"
-            class="hook-icon"
-            src="./asset/img/hook_icon.svg"
-            alt=""
-          />
-          <div>
-            <div id="tasks-in-done" class="button-nummber-v1-v3">1</div>
-            <div class="button-text-v1-v3">Done</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="welcome-desk">
-      <span id="welcome-text-desk"></span>
-      <span id="welcome-name-desk"></span>
+      <div id="tasks-in-feedback" class="button-nummber-v1-v3">5</div>
+      <div class="button-text-v1-v3">Tasks in Feedback</div>
     </div>
   </div>
+  
+  <div
+  class="button-v2 button-number-hover-effect hover-effect"
+  onclick="showContent('boardContent'); setActiveElement(this)"
+  >
+  <div class="container-urgent-left">
+    <div>
+      <img
+      class="orange-button"
+      src="./asset/img/oranger_button.svg"
+      alt=""
+      />
+    </div>
+    <div>
+      <div id="tasks-in-urgent" class="button-nummber-v2">1</div>
+      <div class="button-text-v2">Urgent</div>
+    </div>
+  </div>
+  <div class="v-line-grey"></div>
+  <div>
+    <div id="urgent-date" class="button-text-v2">October 16, 2022</div>
+    <div class="">Upcoming Deadline</div>
+  </div>
 </div>
+<div class="container-button-bottom">
+    <div
+    class="button-v3 button-number-hover-effect hover-effect"
+    onmouseover="onMouseOverImg('pen-icon', './asset/img/pen_white_icon.svg')"
+    onmouseout="onMouseOutImg('pen-icon', './asset/img/pen_icon.svg')"
+    onclick="showContent('boardContent'); setActiveElement(this)"
+    >
+    <img
+    id="pen-icon"
+    class="pen-icon"
+    src="./asset/img/pen_icon.svg"
+    alt=""
+    />
+    <div>
+      <div id="tasks-in-to-do" class="button-nummber-v1-v3">1</div>
+      <div class="button-text-v1-v3">To-do</div>
+    </div>
+  </div>
+  <div
+  class="button-v3 button-number-hover-effect hover-effect"
+  onmouseover="onMouseOverImg('hook-icon', './asset/img/hook_white_icon.svg')"
+  onmouseout="onMouseOutImg('hook-icon', './asset/img/hook_icon.svg')"
+  onclick="showContent('boardContent'); setActiveElement(this)"
+  >
+  <img
+  id="hook-icon"
+  class="hook-icon"
+  src="./asset/img/hook_icon.svg"
+  alt=""
+  />
+  <div>
+    <div id="tasks-in-done" class="button-nummber-v1-v3">1</div>
+    <div class="button-text-v1-v3">Done</div>
+  </div>
+</div>
+</div>
+</div>
+<div class="welcome-desk">
+  <span id="welcome-text-desk"></span>
+  <span id="welcome-name-desk"></span>
+</div>
+</div>
+</div>
+<script src="./js/storage.js"></script>
 </body>
 </html>

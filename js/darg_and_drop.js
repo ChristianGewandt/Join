@@ -54,7 +54,7 @@ function moveTo(category) {
     //renderBoard8();
     renderBoard();
     EndDragging();
-    renderSummary();
+    // renderSummary();
     setServer();
         
 

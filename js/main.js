@@ -96,8 +96,8 @@ let standartIcon = "./assets/img/loginPassword.svg";
 
 
 async function init() {
-  await getServer();
   includeHTML();
+  await getServer();
   render();
   // loadUsers();
 }
@@ -165,22 +165,30 @@ function showContent(x) {
 }
 
 // zeige welcher Content aktuell ausgewählt ist
-function setActiveElement(element, i) {
-  let templateActive = document.querySelector(".desktopTemplateIconActive");
-  templateActive.classList.remove("desktopTemplateIconActive");
-  document.getElementById(`icon-blue0`).src = `./assets/img/summaryIcon.svg`;
-  document.getElementById(`icon-blue1`).src = `./assets/img/boardIcon.svg`;
-  document.getElementById(`icon-blue2`).src = `./assets/img/addTaskIcon.svg`;
-  document.getElementById(`icon-blue3`).src = `./assets/img/contactsIcon.svg`;
-  document.getElementById(`icon-blue4`).src = `./assets/img/Privacy-Policy-icon.svg`;
-  document.getElementById(`icon-blue5`).src = `./assets/img/infoIcon.svg`;
-  document.getElementById(`icon-blue${i}`).src = `./assets/img/IconBlue${i}.svg`;
+function setActiveElement(id, i) {
+  // let templateActive = document.getElementById()(".desktopTemplateIconActive");
+  // templateActive.classList.remove("desktopTemplateIconActive");
+ for (let j = 0; j <= 5; j++) {
+  let element = document.getElementById(id);
+  if (element && element.classList.contains("desktopTemplateIconActive")) {
+    element.classList.remove("desktopTemplateIconActive");
+  }
+  
+ }
+
+  document.getElementById(`icon-blue0`).src = `./asset/img/summaryIcon.svg`;
+  document.getElementById(`icon-blue1`).src = `./asset/img/boardIcon.svg`;
+  document.getElementById(`icon-blue2`).src = `./asset/img/addTaskIcon.svg`;
+  document.getElementById(`icon-blue3`).src = `./asset/img/contactsIcon.svg`;
+  document.getElementById(`icon-blue4`).src = `./asset/img/Privacy-Policy-icon.svg`;
+  document.getElementById(`icon-blue5`).src = `./asset/img/infoIcon.svg`;
+  document.getElementById(`icon-blue${i}`).src = `./asset/img/IconBlue${i}.svg`;
   // let icons = document.querySelectorAll(`.svg-icon`);
   // icons.forEach(function(icon) {
   //   icon.classList.remove("svg-icon-aktive");
   // });
  
-  element.classList.add("desktopTemplateIconActive");
+  document.getElementById(`icon-blue${i}`).classList.add("desktopTemplateIconActive");
 //   icons[i].classList.add("svg-icon-aktive");
 }
 

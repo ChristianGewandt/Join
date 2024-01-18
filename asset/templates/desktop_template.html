@@ -3,23 +3,23 @@
 
   <div class="second-container-desktopTemplateMenu">
     <div class="desktopTemplateMenu">
-    <div
-      onclick="showContent('summaryContent'); setActiveElement(this, 0); clearTheInputFields(0)"
+    <div  
+      onclick="handleClick()"
       id="summary"
-      class="desktopTemplateMenuElements desktopTemplateIconActive"
+      class="desktopTemplateMenuElements"
     >
       <div class="desktopTemplateIconContainer">
         <img
           id="icon-blue0"
           class="desktopTemplateIcon"
-          src="./asset/img/IconBlue0.svg"
+          src="./asset/img/summaryIcon.svg"
           alt=""
         />
       </div>
-      <p class="desktopTemplateFont curser-pointer"><span>Summary</span></p>
+      <p class="desktopTemplateFont curser-pointer"><span>Summery</span></p>
     </div>
     <div
-      onclick="showContent('boardContent'); setActiveElement(this, 1); clearTheInputFields(0); closeSelectContactsToAssign(0)"
+      onclick="boardClick()"
       id="board-button"
       class="desktopTemplateMenuElements"
     >
@@ -34,7 +34,7 @@
       <p id="board" class="desktopTemplateFont curser-pointer"><span>Board</span></p>
     </div>
     <div
-      onclick="showContent('addTaskContent'); setActiveElement(this, 2); clearTheInputFields(0)"
+      onclick="window.location.href='./add_task.html'; setActiveElement(this, 2); clearTheInputFields(0);"
       id="addTask"
       class="desktopTemplateMenuElements"
     >
@@ -49,7 +49,7 @@
       <p class="desktopTemplateFont curser-pointer"><span>Add Task</span></p>
     </div>
     <div
-      onclick="showContent('contactsContent'); setActiveElement(this, 3); clearTheInputFields(0); renderContacts()"
+      onclick="window.location.href='./contacts.html'; setActiveElement(this, 3); clearTheInputFields(0); renderContacts()"
       id="contacts"
       class="desktopTemplateMenuElements"
     >
@@ -66,7 +66,7 @@
   </div>
   <div class="desktopTemplateMenu">
     <div
-      onclick="showContent('privacyPolicyContent'); setActiveElement(this, 4); clearTheInputFields(0)"
+      onclick="setActiveElement(this, 4); clearTheInputFields(0)"
       id="PrivacyPolicy"
       class="desktopTemplateMenuElements"
     >
@@ -76,7 +76,7 @@
       <p class="desktopTemplateFont curser-pointer"><span>Privacy Policy</span></p>
     </div>
     <div
-      onclick="showContent('legalNoticeContent'); setActiveElement(this, 5); clearTheInputFields(0)"
+      onclick=" setActiveElement(this, 5); clearTheInputFields(0)"
       id="legalNotice"
       class="desktopTemplateMenuElements"
     >

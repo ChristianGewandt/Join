@@ -1,13 +1,18 @@
 let contactToEdit
 
 async function initContacts() {
-  await getServer();
   includeHTML();
+  await getServer();
   renderContacts();
+  setActiveElement("contacts", 3);
   // loadUsers();
 }
 
-
+// deleteUsers();
+// async function deleteUsers() {
+//    contacts = [];
+//    await setServer();
+//  }
 
 
 function renderContacts() {

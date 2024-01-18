@@ -1,7 +1,8 @@
 async function initBoard() {
-  await getServer();
   includeHTML();
-   renderBoard();
+  await getServer();
+  renderBoard();
+  setActiveElement("board-button", 1);
   // loadUsers();
 }
 
