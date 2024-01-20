@@ -54,6 +54,14 @@
     cursor: pointer;
 }
 
+.second-container-desktopTemplateMenu {
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
 .desktopTemplateIconContainer {
     display: flex;
     flex-direction: column;

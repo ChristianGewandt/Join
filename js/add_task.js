@@ -175,7 +175,7 @@ async function createTaskButton(n) {
   selectionDueDate(n);
   await addTaskJasonArray(); /* Das addTaskJasonArray() hollt sich die restlichen Punkte aus den globalen Variablen   */
   deleteAddTaskFields(n);
-  await init();
+  // await init();
   renderSelectOpenTaskCategory(n);
   deleteSelectedContacts();
   closeContacts(n);

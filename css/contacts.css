@@ -142,12 +142,12 @@ contacts {
     align-items: flex-start;
     padding: 0px;
     gap: 5px;
-    width: 140px;
+    width: 180px;
     height: 49px;
 }
 
 .contactsInfo span:first-child {
-    width: 127px;
+    width: 100%;
     height: 25px;
 
     /* Version 2/t6 */
@@ -166,7 +166,7 @@ contacts {
 }
 
 .contactsInfo span:last-child {
-    width: 140px;
+    width: 100%;
     height: 19px;
 
     /* Version 2/body */
