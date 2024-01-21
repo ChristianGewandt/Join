@@ -334,13 +334,11 @@ contacts {
 .contactCardHeaderAddTask {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
-    padding: 0px;
-    gap: 13px;
-cursor: pointer;
+    padding-left: 6px;
+    cursor: pointer;
     width: 128px;
-    height: 19px;
+    height: 30px;
 }
 
 .contactCardHeaderAddTask span {
@@ -390,13 +388,13 @@ cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     padding: 0px;
     gap: 6px;
-cursor: pointer;
+    cursor: pointer;
     width: 126.85px;
     height: 29.34px;
-}
+}           
 
 .contactCardEdit span {
     width: 100px;

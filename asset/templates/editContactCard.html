@@ -1,10 +1,10 @@
 <div class="editContactOverlay" >
     <form onsubmit="editContact(); return false" novalidate>
-    <img class="closeOverlay" onclick="closeEditContactCard('editContactCard')" src="./assets/img/black-x.svg" alt="">
+    <img class="closeOverlay" onclick="closeEditContactCard('editContactCard')" src="./asset/img/black-x.svg" alt="">
     <div class="addContactOverlayLeft">
         <span class="addContactOverlayTitle">Edit contact</span>
         <img src="./assets/img/OverlaySeperator.svg" alt="">
-        <img class="addContactOverlayLogo" src="./assets/img/logo_invert.svg" alt="">
+        <img class="addContactOverlayLogo" src="./asset/img/logo_invert.svg" alt="">
     </div>
     <div id="editContactAvartar" class="editContactAvartar"><span class="editContactAvartarInitials" id="editContactAvartarInitials"></span></div>
     <div class="addContactOverlayContent">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div id="addContactButtons" class="addContactButtons">
-        <button type="button" class="editContactOverlayDelteButton"><span>Delete</span></button>
+        <button type="button" class="editContactOverlayDelteButton" onclick="editContactOverlayDelteButton()"><span>Delete</span></button>
         <button type="submit" class="editContactOverlaySaveButton"><span>Save</span></button>
     </div>
     </form>

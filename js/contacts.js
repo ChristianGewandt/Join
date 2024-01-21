@@ -105,7 +105,7 @@ function setDeleteButton(number) {
 async function deleteContact(number) {
   contacts.splice(number, 1 );
   addTaskContacts.splice(number, 1);
-  closeEditCardOverlay();
+  closeEditContactCard();
   renderDeleteLetter(number);
   renderContacts();
   setInnerContactCard();
@@ -212,22 +212,26 @@ function setInnerContactCard(j) {
 
 function setInnerContactCardTemplate(j) {
   let contact = contacts[j]
-  return `<div class="contactCardHeader">
+  return /*html*/ `<div class="contactCardHeader">
   <div class="contactCardAvatar" style="background-color: ${avatarBackgroundColors[j]};"><span>${contact.initials}</span></div>
   <div class="contactCardContentHeader">
       <span>${contact.name}</span>
       <div onclick="popUpWindowaddTask()"class="contactCardHeaderAddTask">
           <img src="./assets/img/contactPlus.svg" alt="">
-          <span>Add Task</span>
+          <div onclick="openEditContactOverlay(${j}, 'editContactCard')" class="contactCardEdit">
+          <img src="./asset/img/editIcon.svg" width="16" height="25" alt="">
+          <span>Edit</span>
       </div>
+      <div onclick="deleteContact(${j})" class="contactCardEdit">
+        <img src="/asset/img/delete.svg" width="16" height="25" alt="">
+        <span>Delete</span>
+     </div>
+    </div>
   </div>
 </div>
 <div class="contactCardInfoHeader">
   <span>Contact Information</span>
-  <div onclick="openEditContactOverlay(${j}, 'editContactCard')" class="contactCardEdit">
-      <img src="./assets/img/editIcon.svg" alt="">
-      <span>Edit Contact</span>
-  </div>
+  
 </div>
 <div class="contactCardInfo">
   <div class="contactCardEmail">
@@ -277,7 +281,7 @@ async function isEmailAvailable(email, name, phone, initials) {
   // closeEditCard("editContactOverlay");
   renderContacts()
   setActiveContact(contacts.length-1);
-  closeEditCardOverlay();
+ closeContactCard("addContactCard");
 
   } else {
     document.getElementById("addContactEmailError").classList.add('d-none');
