@@ -10,8 +10,8 @@ body {
     background: #F5F5F5;
     font-family: 'Inter';
     font-style: normal;
-    overflow: hidden;
-    height: 100vh;
+    /* overflow: hidden; */
+    /* height: 100vh; */
 }
 
 .head-and-body-container {
@@ -153,7 +153,31 @@ input {
 .display-flex {
     display: flex !important;
     flex-direction: column;
+    overflow-y: auto;
+    height: 255px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
 
+.display-flex::-webkit-scrollbar {
+    width: 10px;
+}
+
+.display-flex::-webkit-scrollbar-thumb {
+    background-color: #2A3647;
+    border-radius: 100px;
+}
+
+.display-flex::-webkit-scrollbar-track {
+    background-color: #D1D1D1;
+    border-radius: 100px;
+    margin-block: 2px;
+}
+
+.boardElementContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .selection-point-container {

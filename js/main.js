@@ -363,6 +363,7 @@ function checkInputEmpty(element) {
   const input = document.getElementById(`${element}`);
   if (input.value === "") {
     document.getElementById(`${element}Error`).classList.remove("d-none");
+    document.getElementById(`${element}Border`).classList.add("redBorder");
     return true;
   }
 }

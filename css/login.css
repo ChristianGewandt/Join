@@ -390,3 +390,7 @@ img[src="assets/img/notVisibleIcon.svg"]:hover,
 img[src="assets/img/visibleIcon.svg"]:hover {
   cursor: pointer;
 }
+
+.redBorder {
+    border: 2px solid red;
+}

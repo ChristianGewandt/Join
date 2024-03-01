@@ -277,6 +277,7 @@ async function isEmailAvailable(email, name, phone, initials) {
     await setServer();
   document.getElementById('contactOverlay').reset()
   document.getElementById("addContactEmailIsAvailable").classList.add("d-none");
+  document.getElementById("addContactEmailBorder").classList.remove("redBorder");
   // closeNewContactOverlay()
   // closeEditCard("editContactOverlay");
   renderContacts()
@@ -287,6 +288,7 @@ async function isEmailAvailable(email, name, phone, initials) {
     document.getElementById("addContactEmailError").classList.add('d-none');
     document.getElementById("addContactEmailFormatError").classList.add("d-none");
     document.getElementById("addContactEmailIsAvailable").classList.remove("d-none");
+    document.getElementById("addContactEmailBorder").classList.add("redBorder");
   }
 }
 
@@ -307,6 +309,9 @@ async function editContact() {
 function checkInputsAddContact() {
   document.querySelectorAll(`.addContactErrorMessage`).forEach(function (el) {
     el.classList.add("d-none");
+  });
+  document.querySelectorAll(`.inputFieldWithImg`).forEach(function (el) {
+    el.classList.remove("redBorder");
   });
   let errorCount = 0;
   errorCount += checkInputEmpty('addContactName') ? 1 : 0;

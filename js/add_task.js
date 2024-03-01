@@ -415,7 +415,9 @@ function closeContacts(n) {
   renderAddTaskContacts(n, i);
   checkboxChecked(n)
   getSelectedOptionsContacts(n)
+  findContacts();
 }
+
 
 
 
@@ -754,7 +756,7 @@ function checkMandatoryFieldDescription(n) {
 
 function checkMandatoryFieldAssignedTo(n) {
   let contactClassList = document.getElementById(`contacts${n}`);
-  if (selectedContacts.length === 0 && !contactClassList.classList.contains('display-flex')) {
+  if (selectedContacts.length === 0) {
     document.getElementById(`required-assigned-to${n}`).classList.remove('d-none');
     document.getElementById(`select-contacts-container${n}`).style.border = '2px solid red';
   } else {

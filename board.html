@@ -37,6 +37,7 @@
     <div class="boardHeadline">
       <h1>Board</h1>
       <div class="boardHeadlineRight">
+        
         <div class="findTask">
           <input 
           placeholder="Find Task"
@@ -53,9 +54,8 @@
         </button>
       </div>
     </div>
-    <div class="boardContent">
-      <div class="boardElement">
-        <div class="boardElementHeader">
+    <div class="boardElement-container">
+      <div class="boardElementHeader">
           <span>To do</span>
           <img
           src="./asset/img/boardPlusIcon.svg"
@@ -65,14 +65,6 @@
           onclick="openAddTaskWindow()"
           />
         </div>
-        <div
-        id="boardContentToDo"
-        class="boardElementContent task-area"
-        ondrop="moveTo('boardContentToDo')"
-        ondragover="allowDrop(event)"
-        ></div>
-      </div>
-      <div class="boardElement">
         <div class="boardElementHeader">
           <span>In progress</span>
           <img
@@ -83,14 +75,6 @@
           onclick="openAddTaskWindow()"
           />
         </div>
-        <div
-        id="boardContentInProgress"
-        class="boardElementContent task-area"
-        ondrop="moveTo('boardContentInProgress')"
-        ondragover="allowDrop(event)"
-        ></div>
-      </div>
-      <div class="boardElement">
         <div class="boardElementHeader">
           <span>Awaiting Feedback</span>
           <img
@@ -101,31 +85,45 @@
           onclick="openAddTaskWindow()"
           />
         </div>
+        <div class="boardElementHeader">
+          <span>Done</span>
+          <img
+          src="./asset/img/boardPlusIcon.svg"
+          alt=""
+          onmouseover="hover(this,'./asset/img/boardPlusIconHover.svg');"
+          onmouseout="unhover(this, './asset/img/boardPlusIcon.svg')"
+          onclick="openAddTaskWindow()"
+          />
+        </div>
+    </div>
+    <div class="boardContent">
+      <div class="boardElementContainer">
+        <div
+        id="boardContentToDo"
+        class="boardElementContent task-area"
+        ondrop="moveTo('boardContentToDo')"
+        ondragover="allowDrop(event)"
+        ></div>
+        <div
+        id="boardContentInProgress"
+        class="boardElementContent task-area"
+        ondrop="moveTo('boardContentInProgress')"
+        ondragover="allowDrop(event)"
+        ></div>
         <div
         id="boardContentAwaiting"
         class="boardElementContent task-area"
         ondrop="moveTo('boardContentAwaiting')"
         ondragover="allowDrop(event)"
         ></div>
-      </div>
-    <div class="boardElement">
-      <div class="boardElementHeader">
-        <span>Done</span>
-        <img
-        src="./asset/img/boardPlusIcon.svg"
-        alt=""
-        onmouseover="hover(this,'./asset/img/boardPlusIconHover.svg');"
-        onmouseout="unhover(this, './asset/img/boardPlusIcon.svg')"
-        onclick="openAddTaskWindow()"
-        />
-      </div>
-      <div
+        <div
       id="boardContentDone"
       class="boardElementContent task-area"
       ondrop="moveTo('boardContentDone')"
       ondragover="allowDrop(event)"
       ></div>
-    </div>
+      </div>
+      
   </div>
   <div class="activeTaskOverlay d-none" id="activeTaskEditOverlay" w3-include-html="./asset/templates/activeTaskEditOverlay.html"></div>
 </div>
