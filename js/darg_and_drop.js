@@ -7,7 +7,6 @@ let currentDraggedElement;
  */
 
 function renderBoard8() {
-    // clearBoard();
     renderCardColumn(tasks, 'toDo');
     renderCardColumn(tasks, 'progress');
     renderCardColumn(tasks, 'feedback');
@@ -22,7 +21,6 @@ function renderCardColumn(tasks, column) {
         const id = task[i].id;
         const assignments = task[i].assignments;
         document.getElementById('boardContentInProgress').innerHTML += addBoardCard(element1, i);
-
     }
 }
 
@@ -32,7 +30,6 @@ function startDragging(idCounter) {
     document.getElementById('boardContentInProgress').classList.add('task-area-background');
     document.getElementById('boardContentAwaiting').classList.add('task-area-background');
     document.getElementById('boardContentDone').classList.add('task-area-background');
-
 }
 
 function EndDragging(idCounter) {
@@ -41,7 +38,6 @@ function EndDragging(idCounter) {
     document.getElementById('boardContentInProgress').classList.remove('task-area-background');
     document.getElementById('boardContentAwaiting').classList.remove('task-area-background');
     document.getElementById('boardContentDone').classList.remove('task-area-background');
-
 }
 
 
@@ -51,11 +47,7 @@ function allowDrop(ev) {
 
 function moveTo(category) {
     tasks[currentDraggedElement]['taskProgress'] = category;
-    //renderBoard8();
     renderBoard();
     EndDragging();
-    // renderSummary();
     setServer();
-        
-
 }

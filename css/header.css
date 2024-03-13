@@ -50,17 +50,16 @@
     filter: invert(1);
 }
 
-.headerUserProfilImg {
+.headerUserProfilLetter {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding: 1px;
-    gap: 16px;
     width: 49px;
     height: 49px;
     border-radius: 100%;
-    border: solid black 2px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    border: solid #2c3645 3px;
+    justify-content: center;
+    background-color: white;
+    font-size: larger;
+    font-weight: bold;
+    color: #55a8dd;
 }

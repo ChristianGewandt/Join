@@ -1,5 +1,7 @@
-let user
-
+async function initLogin() {
+  includeHTML();
+  await getServer();
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     let logo = document.querySelector('.logo');
@@ -31,9 +33,18 @@ function updateCheckbox() {
 
 
 
-function getUser() {
+async function getUser() {
+    deleteUserOnServer();
     let email = document.getElementById('loginEmail').value;
     user = users.find(user => user.email === email);
+    await setServer();
+    await getServer();
+
+}
+
+async function deleteUserOnServer() {
+    user = [] ;
+    await setServer();
 
 }
 
@@ -76,7 +87,7 @@ async function addUser() {
     let initials = getInitials('signUpName')
     users.push({name: name.value, email: email.value, password: password.value, initials: initials});
     await setServer();
-    window.location.href = 'login.html?msg=Du hast dich erfolgreich registriert';
+    window.location.href = 'index.html?msg=Du hast dich erfolgreich registriert';
 }
 
 

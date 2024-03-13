@@ -5,14 +5,7 @@ async function initContacts() {
   await getServer();
   renderContacts();
   setActiveElement("contacts", 3);
-  // loadUsers();
 }
-
-// deleteUsers();
-// async function deleteUsers() {
-//    contacts = [];
-//    await setServer();
-//  }
 
 
 function renderContacts() {
@@ -121,44 +114,6 @@ function openNewContactOverlay() {
   document.getElementById('container-opened-task').classList.add('fade-in-left');
 }
 
-// function openNewContactOverlay() {
-//   document.getElementById('addContactOverlay').classList.remove('d-none')
-//   document.getElementById('container-opened-task').classList.remove('d-none')
-//   document.getElementById('addContactOverlay').classList.remove('fade-out-right');
-//   document.getElementById('addContactOverlay').classList.add('fade-in-left');
-//   document.getElementById('container-opened-task').classList.remove('fade-out-right');
-//   document.getElementById('container-opened-task').classList.add('fade-in-left');
-// }
-
-// function closeNewContactOverlay(){
-//   document.getElementById('addContactOverlay').classList.add('d-none')
-//   document.getElementById('container-opened-task').classList.add('d-none')
-// }
-
-
-// function openEditContactOverlay(j) {
-//   contactToEdit = j
-//   setEditContactOverlay(j)
-//   document.getElementById("editContactOverlay").classList.remove("fade-out-right");
-//   document.getElementById("editContactOverlay").classList.add("fade-in-left");
-//   document.getElementById("editContactOverlay").classList.remove("d-none");
-// }
- 
-
-// function closeEditContactOverlay(){
-//   console.log("closeEditContactOverlay called");
-//   // document.getElementById('container-opened-task').classList.add('d-none')
-//   document
-//     .getElementById("editContactOverlay")
-//     .classList.remove("fade-in-left");
-
-//   document.getElementById("editContactOverlay").classList.add("fade-out-right");
-//   setTimeout(function () {
-//     document.getElementById("editContactOverlay").classList.add("d-none");
-//   }, 1000);
-  
-// }
-
 function setEditContactOverlay(j) {
   let contact = contacts[j]
   document.getElementById('editContactName').value = contact.name
@@ -177,12 +132,12 @@ function setActiveContact(j) {
   contactCard = document.querySelector(".contactsCard")
 
   if (contact === element) {
-    // Clicked element is already active, so remove the classes to make it inactive:
+    
     contact.classList.remove("contactListElementActive");
     contactCard.classList.remove("contactsCardActive");
 
   } else {
-    // Clicked element is not active, so make it active by adding classes and removing them from the previous active element:
+    
     if (contact) {
       contact.classList.remove("contactListElementActive");
       contactCard.classList.remove("contactsCardActive");
@@ -259,8 +214,17 @@ function deleteAddContact() {
   document.getElementById("addContactName").value = "";
   document.getElementById("addContactEmail").value = "";
   document.getElementById("addContactPhone").value = "";
-  closeEditCardOverlay();
+  
+  deleteAddContactBoarderAndText();
 
+}
+
+function deleteAddContactBoarderAndText() {
+  document.getElementById("addContactEmailBorder").classList.remove("redBorder");
+  document.getElementById("addContactEmailError").classList.add("d-none");
+  document.getElementById("addContactNameBorder").classList.remove("redBorder");
+  document.getElementById("addContactNameError").classList.add("d-none");
+  document.getElementById("addContactEmailIsAvailable").classList.add("d-none");
 }
 
 
@@ -271,15 +235,13 @@ async function isEmailAvailable(email, name, phone, initials) {
   let isEmailExists = contacts.some((contact) => contact.email.toLowerCase() === emailToCheck.toLowerCase());
 
   if (!isEmailExists) {
-    // contacts.length = 0;
-    // await setServer();
+    
     contacts.push({name: name,email: email,phone: phone,initials: initials,});
     await setServer();
   document.getElementById('contactOverlay').reset()
   document.getElementById("addContactEmailIsAvailable").classList.add("d-none");
   document.getElementById("addContactEmailBorder").classList.remove("redBorder");
-  // closeNewContactOverlay()
-  // closeEditCard("editContactOverlay");
+
   renderContacts()
   setActiveContact(contacts.length-1);
  closeContactCard("addContactCard");
@@ -293,18 +255,17 @@ async function isEmailAvailable(email, name, phone, initials) {
 }
 
 async function editContact() {
-  let name = document.getElementById('editContactName')
+  let name = document.getElementById('editContactName');
   let email = document.getElementById('editContactEmail');
-  let phone = document.getElementById('editContactPhone')
+  let phone = document.getElementById('editContactPhone');
   let initials = getInitials('editContactName');
   contacts.splice(contactToEdit, 1, { name: name.value, email: email.value, phone: phone.value, initials: initials });
-  await setServer();
-  // closeEditContactOverlay():
-  closeContactCard("editContactOverlay");
-  renderContacts()
-  setActiveContact(contactToEdit)
-}
 
+  await setServer();
+  renderContacts();
+  setActiveContact(contactToEdit);
+  checkInputsEditContact();
+}
 
 function checkInputsAddContact() {
   document.querySelectorAll(`.addContactErrorMessage`).forEach(function (el) {
@@ -329,6 +290,9 @@ function checkInputsEditContact(j) {
   document.querySelectorAll(`.addContactErrorMessage`).forEach(function (el) {
     el.classList.add("d-none");
   });
+  document.querySelectorAll(`.inputFieldWithImg`).forEach(function (el) {
+    el.classList.remove("redBorder");
+  });
   let errorCount = 0;
   errorCount += checkInputEmpty('editContactName') ? 1 : 0;
   errorCount += checkInputEmpty('editContactEmail') ? 1 : 0;
@@ -350,8 +314,3 @@ function onMouseOutImg(id, src) {
 
 
 
-// async function löschen() {
-//   contacts.length = 0;
-//   addTaskContacts.length = 0;
-//   await setServer();
-// }

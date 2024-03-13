@@ -10,8 +10,6 @@ body {
     background: #F5F5F5;
     font-family: 'Inter';
     font-style: normal;
-    /* overflow: hidden; */
-    /* height: 100vh; */
 }
 
 .head-and-body-container {
@@ -154,7 +152,7 @@ input {
     display: flex !important;
     flex-direction: column;
     overflow-y: auto;
-    height: 255px;
+    height: 224px;
     margin-right: 5px;
     margin-bottom: 5px;
 }
@@ -267,7 +265,6 @@ img.arrow-icon {
 .content-add-task-container {
     display: flex;
     flex-direction: column;
-    /* width: 100%;*/
     align-items: center; 
 }
 
@@ -308,9 +305,6 @@ img.arrow-icon {
 .prio-container {
     display: flex;
     flex-direction: column;
-    margin-top: 8px;
-    padding-top: 7px;
-    margin-bottom: 10px;
 }
 
 .prio-body-container {
@@ -421,8 +415,7 @@ img.prio-icon {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 145px;
-    margin-bottom: 74px;
+    margin-top: 15px;
 }
 
 .create-task-btn {
@@ -478,7 +471,17 @@ img.prio-icon {
 .checkbox-container {
     display: flex;
     margin-bottom: 5px;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+
 
 .checkbox {
     margin-right: 10px;
@@ -488,7 +491,6 @@ input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* optional: fügen Sie ein benutzerdefiniertes Symbol hinzu */
     width: 18px;
     height: 18px;
     border-radius: 5px;
@@ -524,20 +526,6 @@ input[type="checkbox"]:checked::before {
     cursor: pointer;
 }
 
-/* .fly-in-button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    position: relative;
-    bottom: -50px;
-    transition: bottom 0.5s ease-in-out;
-}
-
-.fly-in-button:hover {
-    bottom: 0;
-} */
 
 .task-added-to-board-container {
     display: flex;
@@ -574,7 +562,6 @@ input[type="checkbox"]:checked::before {
     bottom: 0;
     opacity: 0;
     color: white;
-    /* transform: translate(-500%, -500%); */
     animation: fly-in 1s ease-out forwards;
 }
 
@@ -587,24 +574,6 @@ input[type="checkbox"]:checked::before {
     fill: #ff0000;
 }
 
-/* @keyframes fly-in {
-    to {
-        opacity: 1;
-        transform: translateY(-50%);
-    }
-} */
-
-/* @keyframes fly-in {
-
-to {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate( -50%, -50%);
-        opacity: 1;
-    }
-        
-    } */
 
 @keyframes fly-in {
     100% {
@@ -623,23 +592,7 @@ to {
 
 
 
-/* .fade-out-right {
-    animation-name: fade-out-right;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
 
-@keyframes fade-out-right {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-} */
 
 
 
@@ -670,9 +623,6 @@ to {
         display: none;
     }
 
-    /* .container-center{
-
-} */
 
 }
 
@@ -686,3 +636,50 @@ to {
     width: 100%;
 }
 
+.subtask-container {
+    margin-bottom: 10px;
+}
+
+/* .subtask-container2 {
+    position: fixed;
+    bottom: 112px;
+} */
+
+.current-subtask-container2 {
+    height: 54px;
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+.checkbox-container2 {
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 10px;
+}
+
+
+.add-task-subtask-point {
+    height: 150px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.add-task-subtask-point::-webkit-scrollbar {
+    width: 10px;
+}
+
+.add-task-subtask-point::-webkit-scrollbar-thumb {
+    background-color: #2A3647;
+    border-radius: 100px;
+}
+
+.add-task-subtask-point::-webkit-scrollbar-track {
+    background-color: #D1D1D1;
+    border-radius: 100px;
+    margin-block: 2px;
+}

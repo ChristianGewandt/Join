@@ -1,7 +1,6 @@
 function openEditContactOverlay(j, id) {
   contactToEdit = j;
   setEditContactOverlay(j);
-  // openContactCardWithOverlay(id);
 
   document.getElementById(id).classList.remove("fade-out-right");
   document.getElementById(id).classList.add("fade-in-left");
@@ -10,25 +9,7 @@ function openEditContactOverlay(j, id) {
   document.getElementById("editContactOverlay").classList.remove("d-none");
   document.getElementById("editContactOverlay").classList.add("fade-in-left");
   document.getElementById("editContactOverlay").classList.remove("fade-out-right");
-  
-  // openContactCardWithOverlay(id);
-  // document.getElementById("backgroundOverlay").classList.remove("d-none");
-  // document.getElementById("backgroundOverlay").classList.add("fade-in-left");
-  // document.getElementById("backgroundOverlay").classList.remove("fade-out-right");
-  // document.getElementById("backgroundOverlay").classList.add("fade-in-left");
-  // document.getElementById("backgroundOverlay").classList.remove("d-none");
 }
-
-// function closeEditContactOverlay(id) {
-//   console.log("closeEditContactOverlay called");
-//   // document.getElementById('container-opened-task').classList.add('d-none')
-//   document.getElementById("editContactOverlay").classList.remove("fade-in-left");
-
-//   document.getElementById("editContactOverlay").classList.add("fade-out-right");
-//   setTimeout(function () {
-//     document.getElementById("editContactOverlay").classList.add("d-none");
-//   }, 1000);
-// }
 
 function closeEditContactCard() {
 
@@ -96,22 +77,9 @@ function closeContactCard(id) {
     document.getElementById("backgroundOverlay").classList.add("d-none");
     document.getElementById(id).classList.add("d-none");
   }, 1000);
+
+  deleteAddContact();
 }
-
-// function closeEditCardOverlay() {
-//   document.getElementById("editContactOverlay").classList.remove("fade-in-left");
-//   document.getElementById("editContactOverlay").classList.add("fade-out-right");
-//   document.getElementById("backgroundOverlay").classList.remove("fade-in-left");
-//   document.getElementById("backgroundOverlay").classList.add("fade-out-right");
-//   document.getElementById("addContactCard").classList.remove("fade-in-left");
-//   document.getElementById("addContactCard").classList.add("fade-out-right");
-  
-
-//   setTimeout(function () {
-//     document.getElementById("editContactOverlay").classList.add("d-none");
-//     document.getElementById("backgroundOverlay").classList.add("d-none");
-//   }, 1500);
-// }
 
 function openContactCardWithOverlay(id) {
   document.getElementById(id).classList.remove("fade-out-right");

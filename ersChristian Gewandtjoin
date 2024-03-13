@@ -1,0 +1,129 @@
+[33mcommit 4ef45bfb74245399d34cf22fce110265052e3aeb[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Fri Mar 1 23:32:27 2024 +0100
+
+    Anpassungen am Board-Element-Content und Input-Feldern auf der Kontaktseite
+    
+    - Board-Seite: Die Darstellung des Board-Element-Contents wurde verbessert, um eine bessere visuelle Klarheit und Benutzerfreundlichkeit zu gewährleisten.
+    
+    - Kontaktseite: Die Input-Felder in der 'Add Contact Card'-Funktion wurden aktualisiert, um einen roten Rand (redBorder) bei Fokus oder Validierungsfehlern hinzuzufügen. Dies verbessert die Benutzerinteraktion durch klare visuelle Rückmeldungen.
+
+[33mcommit 5895bcebac145ec4757a7e6cfd2ea6d4953a0e5f[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sun Jan 21 19:46:00 2024 +0100
+
+    Search function added to the board page
+
+[33mcommit 81960487e4d1e8a8179eb0ad2b02ec5381ac37b2[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sat Jan 20 18:04:48 2024 +0100
+
+    Menue update 1
+
+[33mcommit c2b7bac1fce11d209cf7eb6593a587a273a3eeef[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Thu Jan 18 13:07:20 2024 +0100
+
+    Menu updated
+
+[33mcommit f52c9c4affcb2f700b4324144eedfd6ed1785082[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sat Jan 6 23:03:36 2024 +0100
+
+    activeTaskEditOverlay.html adjusted
+
+[33mcommit c2d858fc2cc2c91a9574c5529b16a73013ce7330[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sat Jan 6 20:37:00 2024 +0100
+
+    added drag and drop
+
+[33mcommit dcbeda778cbd2d93c05903b970d42fd414101f44[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sun Dec 31 16:42:14 2023 +0100
+
+    update of editContactCard
+
+[33mcommit d7c05c863e3c395ca8cfe76afc6cdd976f0ca113[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Fri Dec 29 23:54:38 2023 +0100
+
+    Added storge.js
+
+[33mcommit adc9a11f52a88d61f67897375ad7c39ec734bd0f[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Fri Dec 29 23:47:00 2023 +0100
+
+    update of addcontactcard
+
+[33mcommit e50b04a9596b8087252e7e3aace5663c593e8fbf[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Thu Dec 28 09:44:40 2023 +0100
+
+    added addContactCard
+
+[33mcommit 74a99874d6c7abd37636764bd56f88e944731e5a[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Wed Dec 27 19:30:56 2023 +0100
+
+    added Contacts page
+
+[33mcommit 848d907a71e785dde7a428ff4abfa16156ab5757[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Wed Dec 27 16:36:45 2023 +0100
+
+    Added Add Task Page
+
+[33mcommit 2b691fe5bf1396ae6d0ba77be2f7eeedaaf75845[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Tue Dec 26 09:08:21 2023 +0100
+
+    Added fade in and fade out fuction from add task on board page
+
+[33mcommit 1d33edf100cc651926cd935f1c97dcf88e37c32c[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sun Dec 24 12:07:24 2023 +0100
+
+    Added templates activeTaskEditOverlay and addTaskOverlayTemplate
+
+[33mcommit 54b83c6b86d80ec743697c50cabdf9120421e77d[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sun Dec 24 11:08:24 2023 +0100
+
+    PlusIcons links updated
+
+[33mcommit 841a52482108cd56aef0ad59cc4e368aefb28725[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sun Dec 24 10:43:19 2023 +0100
+
+    added board page
+
+[33mcommit 07d377e40fbe3290dac300679e73dc709ca36856[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sat Dec 23 21:24:15 2023 +0100
+
+    desktop template add image links
+
+[33mcommit 89514a9ff52a935dc8281ff5cb3f63bea7d994c3[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sat Dec 23 20:10:49 2023 +0100
+
+    add header in summary page
+
+[33mcommit a23991e02fa2d8f343789464be144d70eb10b102[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sat Dec 23 01:02:17 2023 +0100
+
+    ordnder js, css, main
+
+[33mcommit f36e302370a967e199b63f5554ac15f68b897818[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sat Dec 23 00:46:37 2023 +0100
+
+    asset ordner
+
+[33mcommit c6789e6df0dd9c6de69bd6fa23af99b687d3ed42[m
+Author: Christian Gewandt <116904949+ChristianGewandt@users.noreply.github.com>
+Date:   Sat Dec 23 00:38:11 2023 +0100
+
+    frist commit

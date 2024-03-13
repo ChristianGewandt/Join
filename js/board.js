@@ -1,9 +1,9 @@
 async function initBoard() {
-  includeHTML();
+  await includeHTML();
   await getServer();
   renderBoard();
+  iconLetters();
   setActiveElement("board-button", 1);
-  // loadUsers();
 }
 
 function renderBoard() {
@@ -296,8 +296,8 @@ function checkboxCheckedInActivTask(i) {
   }
 }
 
-function okayButtonHTML(i) {
-  document.getElementById("edit-Button-ok-container").innerHTML = `
+function okayButtonHTML(i, n) {
+  document.getElementById`edit-Button-ok-container2`.innerHTML =`
     <div id="edit-Button-ok-container" class="edit-Button-ok-container" onclick="clickOnOKButton(${i}, 2)">
         <button class="edit-Button-ok">ok</button>
     </div>`;
@@ -364,7 +364,6 @@ function changePrio(i) {
 function changeAssignedto(i) {
   tasks[i].assignedTo = [];
 
-  // tasks[i].assignedTo.push(selectedContacts);
 
   for (let j = 0; j < selectedContacts.length; j++) {
     tasks[i].assignedTo.push(selectedContacts[j]);
@@ -382,7 +381,7 @@ function loadActiveEditTaskOverlay(i) {
   loadTaskDueDate(i);
   loadTaskPrio(i);
   loadAssinedTo(i);
-  loadTaskAssinedToButton(i, 2);
+  loadSubtasks(i);
 }
 
 function openActiveEditTaskOverlay(i) {
@@ -435,22 +434,21 @@ function loadAssinedTo(i) {
   }
 }
 
-function loadTaskAssinedToButton(i, n) {
-  document.getElementById(`select-contacts-container${n}`).innerHTML = `
-     <div onclick="openAndCloseContacts(${n}, ${i}); checkMandatoryFieldAssignedTo(${n}); loadTaskAssinedTo(${i},${n});" class="option selectTaskAssignedTo">
-                  <div id="select-start-task-contact">
-                    Select contacts to assign
-                  </div>
-                  <img id="arrow-rotate" class="arrow-icon" src="./assets/img/arrow_icon.svg" alt="">
-                </div>
-                <div id="contacts2" class=" d-none board-contact-container">
-                  <div id="invite-new-contact-container${n}" onclick="inviteNewContact()" class="option ">
-                    <div>Invite new contact</div>
-                    <img class="contact-icon" src="assets/img/contact_icon.svg" alt="">
-                  </div>
-                </div>
-    `;
+function loadSubtasks(i) {
+  document.getElementById("add-task-subtask-point2").innerHTML = "";
+  let subtasks = tasks[i].subtasks;
+
+  for (let s = 0; s < subtasks.length; s++) {
+    const point = subtasks[s];
+    document.getElementById('current-subtask-container2').innerHTML += /*html*/ `
+    <div id="checkbox-container${i}" class="checkbox-container2">
+      <div>${point["subtaskTitle"]}</div>
+      <img onclick='deleteSubtask(${i})' class="delete-icon" src="./asset/img/mülleimer schwarz.svg" alt="">
+    </div>`
+  }
 }
+
+
 
 function loadTaskAssinedTo(i, n) {
   let tasksId = tasks[i];

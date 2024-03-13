@@ -2,6 +2,7 @@ async function initSummery() {
   includeHTML();
   await getServer();
   renderSummary();
+  greetingAds();
   setActiveElement("summary", 0);
 
   

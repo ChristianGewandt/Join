@@ -10,7 +10,7 @@
     <div class="addContactOverlayContent">
         <div class="inputContainer">
             <div class="inputFieldContainer">
-                <div class="inputFieldWithImg">
+                <div id="editContactNameBorder" class="inputFieldWithImg">
                     <input class="loginInput" type="text" id="editContactName" placeholder="Name" aria-required="true"
                         required>
                     <img src="./assets/img/userIcon.svg" alt="">
@@ -20,14 +20,14 @@
         </div>
         <div class="inputContainer">
             <div class="inputFieldContainer">
-                <div class="inputFieldWithImg">
+                <div id="editContactEmailBorder" class="inputFieldWithImg">
                     <input class="loginInput" type="email" id="editContactEmail" placeholder="Email" aria-required="true"
                         required>
                     <img src="./assets/img/loginMail.svg" alt="">
                 </div>
                 <span id="editContactEmailError" class="addContactErrorMessage d-none">This field is required</span>
-                <span id="editContactEmailFormatError" class="addContactErrorMessage d-none">Please insert a valid
-                    email</span>
+                <span id="editContactEmailFormatError" class="addContactErrorMessage d-none">Please insert a valid email</span>
+                <span id="editContactEmailIsAvailable" class="addContactErrorMessage d-none">This field is required. Insert a valid email</span>
             </div>
         </div>
         <div class="inputContainer">

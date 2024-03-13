@@ -1,9 +1,3 @@
-// setURL("https://gruppenarbeit-485join.developerakademie.net/join/smallest_backend_ever",
-// );
-// const STORAGE_TOKEN = "CX6QLF27G5F177AB9NMJEFVTGHZQDQ1IDOZV4BWA";
-// const STORAGE_URL = "https://remote-storage.developerakademie.org/item";
-
-
 let tasks = [];
 let contacts = [];
 let users = [];
@@ -13,6 +7,8 @@ let initials = [];
 let addTaskNewContacts = [];
 let addTaskContacts = [];
 let selectedContacts = [];
+let user = [];
+
 
 const avatarBackgroundColors = [
   "#FF6633",
@@ -78,28 +74,10 @@ let visibleIcon = "./assets/img/visibleIcon.svg";
 let notVisibleIcon = "./assets/img/notVisibleIcon.svg";
 let standartIcon = "./assets/img/loginPassword.svg";
 
-// async function init(include = false) {
-//   // await downloadFromServer();
-//   users = JSON.parse(await getItem("users")) || [];
-//   // users = (await JSON.parse(backend.getItem("users"))) || [];
-//   tasks = (await JSON.parse(backend.getItem("tasks"))) || [];
-//   contacts = (await JSON.parse(backend.getItem("contacts"))) || [];
-//   categorys = (await JSON.parse(backend.getItem("categorys"))) || [];
-//   addTaskNewContacts =
-//     (await JSON.parse(backend.getItem("addTaskNewContacts"))) || [];
-//   addTaskContacts =
-//     (await JSON.parse(backend.getItem("addTaskContacts"))) || [];
-//   if (include) {
-//     includeHTML();
-//   }
-// }
-
-
 async function init() {
   includeHTML();
   await getServer();
   render();
-  // loadUsers();
 }
 
 async function getServer() {
@@ -110,7 +88,8 @@ async function getServer() {
     categorys = JSON.parse(await getItem("categorys"));
     addTaskNewContacts = JSON.parse(await getItem("addTaskNewContacts"));
     addTaskContacts = JSON.parse(await getItem("addTaskContacts"));
-
+    // user = JSON.parse(await getItem("user"));
+    
   } catch (e) {
     console.error("Loading error:", e);
   }
@@ -130,6 +109,7 @@ async function setServer() {
   let categorysAsText = JSON.stringify(categorys);
   let addTaskNewContactsText = JSON.stringify(addTaskNewContacts);
   let addTaskContactsText = JSON.stringify(addTaskContacts);
+  let userAsText = JSON.stringify(user);
   console.log(tasksAsText);
   await setItem("tasks", tasksAsText);
   await setItem("contacts", contactsAsText);
@@ -137,23 +117,10 @@ async function setServer() {
   await setItem("categorys", categorysAsText);
   await setItem("addTaskNewContacts", addTaskNewContactsText);
   await setItem("addTaskContacts", addTaskContactsText);
+  // await setItem("user", userAsText);
 }
 
-// async function setServer() {
-//   let tasksAsText = JSON.stringify(tasks);
-//   let contactsAsText = JSON.stringify(contacts);
-//   let usersAsText = JSON.stringify(users);
-//   let categorysAsText = JSON.stringify(categorys);
-//   let addTaskNewContactsText = JSON.stringify(addTaskNewContacts);
-//   let addTaskContactsText = JSON.stringify(addTaskContacts);
-//   console.log(tasksAsText);
-//   await backend.setItem("tasks", tasksAsText);
-//   await backend.setItem("contacts", contactsAsText);
-//   await backend.setItem("users", usersAsText);
-//   await backend.setItem("categorys", categorysAsText);
-//   await backend.setItem("addTaskNewContacts", addTaskNewContactsText);
-//   await backend.setItem("addTaskContacts", addTaskContactsText);
-// }
+
 
 // zeige das ausgewählte Content auf index.html
 function showContent(x) {
@@ -166,8 +133,7 @@ function showContent(x) {
 
 // zeige welcher Content aktuell ausgewählt ist
 function setActiveElement(id, i) {
-  // let templateActive = document.getElementById()(".desktopTemplateIconActive");
-  // templateActive.classList.remove("desktopTemplateIconActive");
+  
  for (let j = 0; j <= 5; j++) {
   let element = document.getElementById(id);
   if (element && element.classList.contains("desktopTemplateIconActive")) {
@@ -183,13 +149,8 @@ function setActiveElement(id, i) {
   document.getElementById(`icon-blue4`).src = `./asset/img/Privacy-Policy-icon.svg`;
   document.getElementById(`icon-blue5`).src = `./asset/img/infoIcon.svg`;
   document.getElementById(`icon-blue${i}`).src = `./asset/img/IconBlue${i}.svg`;
-  // let icons = document.querySelectorAll(`.svg-icon`);
-  // icons.forEach(function(icon) {
-  //   icon.classList.remove("svg-icon-aktive");
-  // });
  
   document.getElementById(`icon-blue${i}`).classList.add("desktopTemplateIconActive");
-//   icons[i].classList.add("svg-icon-aktive");
 }
 
 
@@ -207,30 +168,6 @@ function backArrow(i) {
   document.getElementById("summary").classList.add("desktopTemplateIconActive");
 }
 
-// zeige welcher Content aktuell ausgewählt ist
-// function setActiveElement(element, i) {
-//   let templateActive = document.querySelector(".desktop-template-icon-active");
-//   templateActive.classList.remove("desktop-template-icon-active");
-//   let icons = document.querySelectorAll(`.svg-icon`);
-//   icons.forEach(function(icon) {
-//     icon.classList.remove("svg-icon-aktive");
-//   });
- 
-//   element.classList.add("desktop-template-icon-active");
-//   icons[i].classList.add("svg-icon-aktive");
-// }
-
-// function setActiveIcon() {
-//   var icons = document.getElementsByClassName("desktopTemplateMenuElements");
-//   for (var i = 0; i < icons.length; i++) {
-//     var img = icons[i].querySelector("img");
-//     img.src = img.src.replace("_active.svg", ".svg");
-//   }
-//   var icon = document.querySelector(".desktopTemplateIconActive");
-//   var img = icon.querySelector("img");
-//   img.src = img.src.replace(".svg", "_active.svg");
-// }
-
 // ändere img bei hover auf buttons
 function hover(element, url) {
   element.setAttribute("src", url);
@@ -246,21 +183,11 @@ function getCurrentUser() {
 }
 
 function closeOverlay(id) {
-  // const container = document.getElementById('container-opened-task');
-  // container.classList.add('d-none');
-  // document.getElementById('add-task-window').classList.add('d-none');
   document.getElementById("addContactOverlay").classList.add("fade-out-right");
   document.getElementById('editContactOverlay').classList.add('fade-out-right');
   document.getElementById(`${id}`).classList.add("d-none");
   document.getElementById(`${id}`).classList.remove("fade-in-left");
   document.getElementById(`${id}`).classList.add("fade-out-right");
-  
-  // document
-  //   .getElementById("container-opened-task")
-  //   .classList.remove("fade-in-left");
-  // document
-  //   .getElementById("container-opened-task")
-  //   .classList.add("fade-out-right");
 }
 
 function listenerPasswordImg(element) {
@@ -372,6 +299,7 @@ function checkEmailFormat(element) {
   const input = document.getElementById(`${element}`);
   if (input.value.indexOf("@") === -1 && input.value.length > 0) {
     document.getElementById(`${element}FormatError`).classList.remove("d-none");
+    document.getElementById(`${element}Border`).classList.add("redBorder");
     return true;
   }
 }
@@ -430,7 +358,7 @@ function checkIncorrectPassword(element) {
 function checkIn() {
   rememberMe();
   let currentUser = user.name;
-  window.location.href = "index.html?variable=" + currentUser;
+  window.location.href = "summary.html?variable=" + currentUser;
 }
 
 function sendNewPasswordLink() {
@@ -529,3 +457,12 @@ function getInitials(element) {
   // Otherwise, return the first letter of each word
   return nameWords.reduce((result, word) => result + word.charAt(0), "").toUpperCase();
 }
+
+
+function iconLetters() {
+  
+
+  let letters = users[0].initials;
+  document.getElementById("headerUserProfilLetter").innerHTML = letters;
+}
+  

@@ -11,6 +11,7 @@ let addTaskNewSubtasks = [];
 let buttonBackgroundColor = ['#800080', '#ff0000', '#008000', '#ffba00', '#ffc0cb', '#0000ff'];
 let selectedCategory;
 let selectedColor;
+let clickCounter = 0;
 
 async function initAddTask() {
   includeHTML();
@@ -119,9 +120,7 @@ function closeFlyIngButton(n) {
 
  function goToBoardPage(n) {
   let meinButton = document.getElementById('board');
-  //let flyInButton = document.getElementById(`fly-in-button${n}`);
   let addTaskContainer = document.getElementById('content-add-task-container');
-  //let addTaskWindowOverlayContainer = document.getElementById('container-opened-task');
   let addTaskWindowContainer = document.getElementById('add-task-window');
   let taskAddedToBoardButton = document.getElementById(`fly-in-button${n}`);
   let backgroundOverlay = document.getElementById("backgroundOverlay");
@@ -130,13 +129,9 @@ function closeFlyIngButton(n) {
     
      meinButton.click();
      
-     //addTaskWindowOverlayContainer.classList.remove('fade-in-left');
-    //  addTaskContainer.classList.remove('fade-out-right');
-    //  addTaskContainer.classList.add('fade-out-right');
      addTaskWindowContainer.classList.remove('fade-in-left');
      addTaskWindowContainer.classList.add('fade-out-right');
      
-     //addTaskWindowOverlayContainer.classList.add('fade-out-right');
 
    }, 3000);
 
@@ -168,14 +163,12 @@ function closeFlyIngButton(n) {
  */
 
 async function createTaskButton(n) {
-  // inputMandatoryFieldsCheck(n)
   idCount()
   headtitle(n);
   descriptionText(n);
   selectionDueDate(n);
   await addTaskJasonArray(); /* Das addTaskJasonArray() hollt sich die restlichen Punkte aus den globalen Variablen   */
   deleteAddTaskFields(n);
-  // await init();
   renderSelectOpenTaskCategory(n);
   deleteSelectedContacts();
   closeContacts(n);
@@ -277,17 +270,26 @@ async function addTaskCategory(n) {
   for (let i = 0; i < categorys.length; i++) {
     const category = categorys[i];
     content.innerHTML += /*html*/ `
-    <div class="option choose" onclick="selectCategory(${i}, ${n}); checkMandatoryFieldCategory(${n})">
+    <div class="option choose" onmouseover="rubbishBinIconChangeOver()" onmouseout="rubbishBinIconChangeOut()" onclick="selectCategory(${i}, ${n}); checkMandatoryFieldCategory(${n})">
       <div class="selection-point-container">
         <div>${category["categorytext"]}</div>
         <div class="color" style="background-color: ${category["categoryColor"]}"></div>
       </div>
       <div class="color-and-delete-icon-container">
-        <img onclick="deleteCategory(${i}, ${n})" class="delete-icon" src = "./asset/img/delete.svg" alt = "" >
+        <img id="rubbishBinIconChange"  onclick="deleteCategory(${i}, ${n})" class="delete-icon" src = "/asset/img/mülleimer schwarz.svg" alt = "" >
       </div> 
     </div>`;
   }
 }
+
+function rubbishBinIconChangeOver() {
+  document.getElementById("rubbishBinIconChange").src='./asset/img/mülleimer weiss.svg';
+}
+
+function rubbishBinIconChangeOut() {
+  document.getElementById("rubbishBinIconChange").src='./asset/img/mülleimer schwarz.svg';
+}
+
 
 function colorButton(i, n) {
   selectedColor = '';
@@ -406,19 +408,61 @@ function closeContacts(n) {
   document.getElementById(`arrow-rotate`).classList.remove("arrow-rotate");
 }
 
- function openAndCloseContacts(n, i) {
-  document.getElementById(`contacts${n}`).classList.toggle('display-flex');
-  document.getElementById(`arrow-rotate`).classList.toggle('arrow-rotate');
-  deleteAddTaskContacts()
-  loadNewContactsInAddTaskContacts()
-  loadContactsInAddTaskContacts()
-  renderAddTaskContacts(n, i);
-  checkboxChecked(n)
-  getSelectedOptionsContacts(n)
-  findContacts();
+ 
+
+
+function openContacts(n) {
+  document.getElementById(`select-contacts-container${n}`).innerHTML = `
+  <div
+                onclick="closeContacts(${n}), checkMandatoryFieldAssignedTo(${n})"
+                class="option selectTaskAssignedTo"
+                >
+                <div id="select-start-task-contact0">
+                  Select contacts to assign
+                </div>
+                <img
+                id="arrow-rotate"
+                    class="arrow-icon"
+                    src="./asset/img/arrow_icon.svg"
+                    alt=""
+                    />
+                  </div>
+                  <div id="contacts${n}">
+                    <div
+                    id="invite-new-contact-container${n}"
+                    onclick="inviteNewContact(${n})"
+                    class="option">
+                    <div>Invite new contact</div>
+                    <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                      <g transform="matrix(1,0,0,1,-1422.42,-1908.22)">
+                        <g id="perm_contact_calendar_FILL0_wght400_GRAD0_opsz48.svg" transform="matrix(4.16667,0,0,4.16667,1522.42,2008.22)">
+                          <g transform="matrix(1,0,0,1,-24,-24)">
+                            <path d="M24,36c-2.2,0 -4.3,0.358 -6.3,1.075c-2,0.717 -3.9,1.842 -5.7,3.375l0,0.55l24,0l0,-0.25c-1.667,-1.5 -3.542,-2.667 -5.625,-3.5c-2.083,-0.833 -4.208,-1.25 -6.375,-1.25Zm-15,3c1.933,-1.9 4.192,-3.375 6.775,-4.425c2.583,-1.05 5.325,-1.575 8.225,-1.575c2.9,0 5.633,0.525 8.2,1.575c2.567,1.05 4.833,2.525 6.8,4.425l0,-29l-30,0l0,29Zm15,-10.7c-1.9,0 -3.508,-0.658 -4.825,-1.975c-1.317,-1.317 -1.975,-2.925 -1.975,-4.825c0,-1.9 0.658,-3.508 1.975,-4.825c1.317,-1.317 2.925,-1.975 4.825,-1.975c1.9,0 3.508,0.658 4.825,1.975c1.317,1.317 1.975,2.925 1.975,4.825c0,1.9 -0.658,3.508 -1.975,4.825c-1.317,1.317 -2.925,1.975 -4.825,1.975Zm0,-3c1.067,0 1.967,-0.367 2.7,-1.1c0.733,-0.733 1.1,-1.633 1.1,-2.7c0,-1.067 -0.367,-1.967 -1.1,-2.7c-0.733,-0.733 -1.633,-1.1 -2.7,-1.1c-1.067,0 -1.967,0.367 -2.7,1.1c-0.733,0.733 -1.1,1.633 -1.1,2.7c0,1.067 0.367,1.967 1.1,2.7c0.733,0.733 1.633,1.1 2.7,1.1Zm-15,18.7c-0.8,0 -1.5,-0.3 -2.1,-0.9c-0.6,-0.6 -0.9,-1.3 -0.9,-2.1l0,-31c0,-0.8 0.3,-1.5 0.9,-2.1c0.6,-0.6 1.3,-0.9 2.1,-0.9l3.25,0l0,-3l3.25,0l0,3l17,0l0,-3l3.25,0l0,3l3.25,0c0.8,0 1.5,0.3 2.1,0.9c0.6,0.6 0.9,1.3 0.9,2.1l0,31c0,0.8 -0.3,1.5 -0.9,2.1c-0.6,0.6 -1.3,0.9 -2.1,0.9l-30,0Zm3,-3l24,0l-24,0Z" style="fill-rule:nonzero;"/>
+                          </g>
+                        </g>
+                      </g></svg>
+                      </div>
+                    </div>`;
+
+                    document.getElementById(`arrow-rotate`).classList.toggle("arrow-rotate");
+                    deleteAddTaskContacts();
+                    loadNewContactsInAddTaskContacts();
+                    loadContactsInAddTaskContacts();
+                    renderAddTaskContacts(n);
+                    checkboxChecked(n);
+                    getSelectedOptionsContacts(n);
 }
 
+function closeContacts(n) {
+  document.getElementById(`select-contacts-container${n}`).innerHTML = `
+  <div onclick="openContacts(${n}); checkMandatoryFieldAssignedTo(${n});" class="option selectTaskAssignedTo">
+                  <div id="select-start-task-contact">
+                    Select contacts to assign
+                  </div>
+                  <img id="arrow-rotate" class="arrow-icon" src="./asset/img/arrow_icon.svg" alt="">
+                </div>`;
 
+}
 
 
 
@@ -514,7 +558,7 @@ async function renderAddTaskContacts(n, i) {
     const contact = addTaskContacts[j];
     content.innerHTML +=/*html*/`
         <div class="option assigned-to-choose" onclick=" toggleCheckbox('${contact['name'] + n}', ${n}, ${j});">
-      <div class="selection-point-container" onclick="renderSelectContact(${j}, ${n})" >
+      <div class="selection-point-container" >
         <div>${contact['name']}</div>
       </div>
       <div>
@@ -667,10 +711,10 @@ function renderSubtaskPoint(n) {
   SubtaskPoint.innerHTML = '';
   for (let i = 0; i < addTaskNewSubtasks.length; i++) {
     const point = addTaskNewSubtasks[i];
-    SubtaskPoint.innerHTML += `
-    <div class="checkbox-container">
-      <input class="checkbox" type="checkbox">
-      <div>${point['subtaskTitle']}</div>
+    SubtaskPoint.innerHTML += /*html*/ `
+    <div id="checkbox-container${i}" class="checkbox-container">
+        <div>${point["subtaskTitle"]}</div>
+        <img onclick='deleteSubtask(${i}, ${n})' class="delete-icon" src="./asset/img/mülleimer schwarz.svg" alt="">
     </div>`;
   }
 }
@@ -855,11 +899,7 @@ function deleteRedBorderAndRequiredText(n) {
   document.getElementById(`required-prio${n}`).classList.add('hidden');
 }
 
-
-// function addTaskNewContact(n) {
-//   let name = document.getElementById("");
-//   let email = document.getElementById(`invite-new-contact${n}`);
-//   let phone = document.getElementById("");
-//   let initials = getInitials(`invite-new-contact${n}`);
-//   isEmailAvailable(email.value, name.value, phone.value, initials);
-// }
+function deleteSubtask(i, n) {
+  addTaskNewSubtasks.splice(i, 1); 
+ renderSubtaskPoint(n);
+}
