@@ -16,6 +16,10 @@ body {
     position: relative;
 }
 
+.headerUserProfilContainer {
+    display: flex;
+    align-items: flex-end;
+}
 
 
 .loginHeadline {

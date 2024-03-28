@@ -13,11 +13,11 @@
     <link rel="preload" href="./fonts/inter-v12-latin-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/inter-v12-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/inter-v12-latin-800.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="/fonts.css">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/fonts.css">
-    <script src="./js/mini_backend.js"></script>
+    <!-- <link rel="stylesheet" href="./css/fonts.css"> -->
+
     <script src="./js/main.js"></script>
     <script src="./js/includeHTML.js"></script>
     <script src="./js/login.js"></script>
@@ -35,7 +35,7 @@
         <div class="loginTopRight"><span>Not a user?</span>
             <div onclick="showContentLogin('signUpContainer')" class="loginSignUpButton"><span>Sign up</span></div>
         </div>
-        <img class="logo" src="./asset/img/logo.svg" alt="">
+        <img class="logo" src="./assets/img/logo.svg" alt="">
 
         <form class="loginContainer" onsubmit="checkInputsLogin(); return false;" novalidate>
             <div class="loginHeadline"><span>Log in</span><img src="./assets/img/loginSeperator.svg" alt=""></div>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="loginButtons">
                     <button type="submit" class="loginLoginButton"><span>Log in</span></button>
-                    <button onclick="event.preventDefault(); window.location.href='summary.html?variable=guest'"
+                    <button onclick="event.preventDefault();  window.location.href='summary.html?variable=guest'"
                         class="loginGuestButton">
                         <span>Guest Log in</span>
                     </button>

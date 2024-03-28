@@ -88,7 +88,7 @@ async function getServer() {
     categorys = JSON.parse(await getItem("categorys"));
     addTaskNewContacts = JSON.parse(await getItem("addTaskNewContacts"));
     addTaskContacts = JSON.parse(await getItem("addTaskContacts"));
-    // user = JSON.parse(await getItem("user"));
+    user = JSON.parse(await getItem("oneuser"));
     
   } catch (e) {
     console.error("Loading error:", e);
@@ -111,13 +111,14 @@ async function setServer() {
   let addTaskContactsText = JSON.stringify(addTaskContacts);
   let userAsText = JSON.stringify(user);
   console.log(tasksAsText);
+  console.log(userAsText);
   await setItem("tasks", tasksAsText);
   await setItem("contacts", contactsAsText);
   await setItem("users", usersAsText);
   await setItem("categorys", categorysAsText);
   await setItem("addTaskNewContacts", addTaskNewContactsText);
   await setItem("addTaskContacts", addTaskContactsText);
-  // await setItem("user", userAsText);
+  await setItem("oneuser", userAsText);
 }
 
 
@@ -131,6 +132,11 @@ function showContent(x) {
   document.getElementById(x).classList.remove("d-none");
 }
 
+function headerUserProfilLetter() {
+  letters = document.getElementById("headerUserProfilLetter");
+  letters.innerHTML = user.initials;
+}
+
 // zeige welcher Content aktuell ausgewählt ist
 function setActiveElement(id, i) {
   
@@ -142,13 +148,13 @@ function setActiveElement(id, i) {
   
  }
 
-  document.getElementById(`icon-blue0`).src = `./asset/img/summaryIcon.svg`;
-  document.getElementById(`icon-blue1`).src = `./asset/img/boardIcon.svg`;
-  document.getElementById(`icon-blue2`).src = `./asset/img/addTaskIcon.svg`;
-  document.getElementById(`icon-blue3`).src = `./asset/img/contactsIcon.svg`;
-  document.getElementById(`icon-blue4`).src = `./asset/img/Privacy-Policy-icon.svg`;
-  document.getElementById(`icon-blue5`).src = `./asset/img/infoIcon.svg`;
-  document.getElementById(`icon-blue${i}`).src = `./asset/img/IconBlue${i}.svg`;
+  document.getElementById(`icon-blue0`).src = `./assets/img/summaryIcon.svg`;
+  document.getElementById(`icon-blue1`).src = `./assets/img/boardIcon.svg`;
+  document.getElementById(`icon-blue2`).src = `./assets/img/addTaskIcon.svg`;
+  document.getElementById(`icon-blue3`).src = `./assets/img/contactsIcon.svg`;
+  document.getElementById(`icon-blue4`).src = `./assets/img/Privacy-Policy-icon.svg`;
+  document.getElementById(`icon-blue5`).src = `./s/img/infoIcon.svg`;
+  document.getElementById(`icon-blue${i}`).src = `./assets/img/IconBlue${i}.svg`;
  
   document.getElementById(`icon-blue${i}`).classList.add("desktopTemplateIconActive");
 }
@@ -231,7 +237,7 @@ function togglePasswordVisibility(element) {
   }
 }
 
-function checkInputsLogin() {
+async function checkInputsLogin() {
   document.querySelectorAll(`.loginErrorMessage`).forEach(function (el) {
     el.classList.add("d-none");
   });
@@ -241,9 +247,9 @@ function checkInputsLogin() {
   errorCount += checkEmailFormat("loginEmail") ? 1 : 0;
   errorCount += checkEmailDoesntExist("loginEmail") ? 1 : 0;
   errorCount += checkPasswordLength("loginPassword") ? 1 : 0;
-  errorCount += checkIncorrectPassword("loginPassword") ? 1 : 0;
+  errorCount += await checkIncorrectPassword("loginPassword") ? 1 : 0;
   if (errorCount > 0) return;
-  checkIn();
+  await checkIn();
 }
 
 function checkInputsSignUp() {
@@ -341,10 +347,10 @@ function checkPasswordLength(element) {
   }
 }
 
-function checkIncorrectPassword(element) {
-  if (getUser()) {
+async function checkIncorrectPassword(element) {
+  if (await getUser()) {
     const password = document.getElementById(`${element}`).value;
-    if (user.password !== password && password.length >= 6) {
+    if (!(user.password === password) && !(password.length < 6)) {
       document
         .getElementById(`${element}IncorrectError`)
         .classList.remove("d-none");
@@ -357,9 +363,12 @@ function checkIncorrectPassword(element) {
 
 function checkIn() {
   rememberMe();
-  let currentUser = user.name;
+  let currentUser = user[0].name;
   window.location.href = "summary.html?variable=" + currentUser;
+  // headerUserProfilLetter();
 }
+
+
 
 function sendNewPasswordLink() {
   let email = document.getElementById("forgotEmail").value;
@@ -464,5 +473,16 @@ function iconLetters() {
 
   let letters = users[0].initials;
   document.getElementById("headerUserProfilLetter").innerHTML = letters;
+}
+
+function logoutHeaderOnOrOff() {
+  document.getElementById("logout-container").classList.toggle('d-none');
+}
+
+
+
+async function emptyUserArry() {
+user = [];
+await setServer();
 }
   

@@ -3,6 +3,7 @@ let contactToEdit
 async function initContacts() {
   includeHTML();
   await getServer();
+  headerUserProfilLetter();
   renderContacts();
   setActiveElement("contacts", 3);
 }
@@ -174,11 +175,11 @@ function setInnerContactCardTemplate(j) {
       <div onclick="popUpWindowaddTask()"class="contactCardHeaderAddTask">
           <img src="./assets/img/contactPlus.svg" alt="">
           <div onclick="openEditContactOverlay(${j}, 'editContactCard')" class="contactCardEdit">
-          <img src="./asset/img/editIcon.svg" width="16" height="25" alt="">
+          <img src="./assets/img/editIcon.svg" width="16" height="25" alt="">
           <span>Edit</span>
       </div>
       <div onclick="deleteContact(${j})" class="contactCardEdit">
-        <img src="/asset/img/delete.svg" width="16" height="25" alt="">
+        <img src="/assets/img/delete.svg" width="16" height="25" alt="">
         <span>Delete</span>
      </div>
     </div>

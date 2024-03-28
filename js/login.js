@@ -1,6 +1,7 @@
 async function initLogin() {
   includeHTML();
-  await getServer();
+await getServer();
+  emptyUserArry();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -34,12 +35,24 @@ function updateCheckbox() {
 
 
 async function getUser() {
-    deleteUserOnServer();
-    let email = document.getElementById('loginEmail').value;
-    user = users.find(user => user.email === email);
+    await deleteUserOnServer();
+    await findUser();
     await setServer();
     await getServer();
 
+}
+
+function findUser() {
+    let email = document.getElementById("loginEmail").value;
+    let foundUser = users.find((user) => user.email === email);
+    if (foundUser) {
+      // Ein Benutzer wurde gefunden, also aktualisiere das globale Array 'user'.
+      user = [foundUser]; // 'user' wird ein Array mit dem gefundenen Benutzer als einzigem Element.
+    } else {
+      // Kein Benutzer gefunden. Das globale Array 'user' bleibt unverändert.
+      // Wenn 'user' bereits leer ist, bleibt es leer.
+      // Wenn es schon Einträge hatte, bleiben diese erhalten.
+    }
 }
 
 async function deleteUserOnServer() {

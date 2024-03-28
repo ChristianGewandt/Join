@@ -24,16 +24,16 @@
 <body onload="initContacts()">
     <div class="container-opened-task d-none" id="backgroundOverlay" onclick="closeContactCard('addContactCard')"></div>
     <div class="container-opened-task d-none" id="editContactOverlay" onclick="closeEditContactCard()"></div>
-    <div class="postion-edit-contact-card d-none" id="editContactCard"  w3-include-html="./asset/templates/editContactCard.html"></div>
-    <div w3-include-html="./asset/templates/desktop_template.html"></div>
-    <div class="postion-edit-contact-card add-task-window d-none" id="addContactCard" w3-include-html="./asset/templates/addContactCard.html" ></div>
+    <div class="postion-edit-contact-card d-none" id="editContactCard"  w3-include-html="./assets/templates/editContactCard.html"></div>
+    <div w3-include-html="./assets/templates/desktop_template.html"></div>
+    <div class="postion-edit-contact-card add-task-window d-none" id="addContactCard" w3-include-html="./assets/templates/addContactCard.html" ></div>
     <contacts>
-        <div w3-include-html="./asset/templates/header.html"></div>
+        <div w3-include-html="./assets/templates/header.html"></div>
         <div class="container-contacts">
             <div class="contactsLeft" id="contactsList"></div>
             <div class="contactsRight">
                 <div class="contactsRightHeader">
-                    <h1>Contacts</h1><img src="./asset/img/contactsSeperator.svg" alt=""><span>Better with a Team</span>
+                    <h1>Contacts</h1><img src="./assets/img/contactsSeperator.svg" alt=""><span>Better with a Team</span>
                 </div>
                 <div class="contactsCardContainer">
                     <div class="contactsCard">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <button class="contactsNewContactButton" onclick="openContactCardWithOverlay('addContactCard')"><span>New Contact</span><img
-                    src="./asset/img/addContactIcon.svg" alt=""></button>
+                    src="./assets/img/addContactIcon.svg" alt=""></button>
                 </div>
             </div>
             

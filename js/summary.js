@@ -33,18 +33,42 @@ function greetingAds() {
     greeting = "Good night";
   }
   document.getElementById("welcome-text-desk").innerHTML = `${greeting}`;
-  greetingCurrentUser();
+  // greetingCurrentUser();
 }
 
-function greetingCurrentUser() {
-  document.getElementById("welcome-name-desk").innerHTML = currentUser;
-}
+// function greetingCurrentUser() {
+  
+
+//   if (user.length === 0) {
+//     document.getElementById("welcome-name-desk").innerHTML = currentUser;
+//   } else {
+//     document.getElementById("welcome-name-desk").innerHTML = "Guest";
+//   }
+    
+// }
+
+
+
 
 function renderSummary() {
+  headerUserProfilLetter();
   getCurrentUser();
   tasksInBoard();
   numberOfTasks();
   upcomingDeadline();
+}
+
+function headerUserProfilLetter() {
+  // letters = user[0].initials
+
+  if (user.length !== 0) {
+    document.getElementById("headerUserProfilLetter").innerHTML = user[0].initials;
+    document.getElementById("welcome-name-desk").innerHTML = user[0].name;
+  } else {
+    document.getElementById("headerUserProfilLetter").innerHTML = "G";
+    document.getElementById("welcome-name-desk").innerHTML = "Guest";
+  }
+  
 }
 
 function tasksInBoard() {
@@ -79,8 +103,7 @@ function numberOfTasks() {
   }
 
   document.getElementById("tasks-in-progress").innerHTML = countProgress;
-  document.getElementById("tasks-in-feedback").innerHTML =
-    countAwaitingFeedback;
+  document.getElementById("tasks-in-feedback").innerHTML = countAwaitingFeedback;
   document.getElementById("tasks-in-to-do").innerHTML = countToDo;
   document.getElementById("tasks-in-done").innerHTML = countDone;
   document.getElementById("tasks-in-urgent").innerHTML = countUrgent;
